@@ -1,5 +1,5 @@
-<h1> OT-HARJOITUSTYO
+ # <h1> Ohjelmistotekniikka, harjoitustyö
+  ## Tehtävät
 
-_Tämä on harjoittelua kursiviivoilla_
-ja
-__Tämä boldattuna!__
+[gitlog.txt](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko1/komentorivi.txt)
