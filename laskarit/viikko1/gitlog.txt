@@ -111,3 +111,6 @@ Date:   Thu Oct 31 10:57:43 2019 +0200
 
  toinen.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
+ 
+ 
+ " Tämä on epäsynkronointi harjoitus  "
