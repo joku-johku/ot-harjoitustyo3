@@ -1,0 +1,113 @@
+commit 92488935cdc8c9b90dba5a1c8df13a9cd54aecd6
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:52:35 2019 +0200
+
+    muutoksia
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 82354500cb1b050368738abe858806247eade1f7
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:43:53 2019 +0200
+
+    lisäyksiä
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 57053d789006877d04630416e9a57ee1376f2653
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:34:43 2019 +0200
+
+    muutoksia vielä lisää
+
+ eka.txt    | 9 +++++----
+ viides.txt | 2 +-
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 1cc36204bb2ded4e7b92fcd0977b62a9a9bb0acb
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:31:44 2019 +0200
+
+    nimen muutos
+
+ toinen.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 918312a502325058b9308c6ddb49ee67207d56fb
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:30:09 2019 +0200
+
+    poisto
+
+ neljas.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 9fed1a645a03099b72b8745ebe14ad6a3b7d62f9
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:26:58 2019 +0200
+
+    lisää muutoksia
+
+ toinen.txt | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 09ef2c4928ae511c468f0059ff5dd83ec1d7289f
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:24:41 2019 +0200
+
+    muutos
+
+ toinen.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit af05809bc2d751ffd138cb935f5794f2f354d528
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:13:29 2019 +0200
+
+    muutoksia ja lisäyksiä
+
+ stuff/sekalaista.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bb3f7a6b0acdebbce65367083b43a21d8a1b738f
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:08:57 2019 +0200
+
+    muutokset
+
+ neljas.txt | 1 +
+ viides.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 84976cd0aa0bd46c9a793bc104838d2024f99d2b
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:05:46 2019 +0200
+
+    lisäys
+
+ viides.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5987ed77da4a58a778cec07a0bd1f287550eebb0
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 11:02:35 2019 +0200
+
+    muutos ja lisäys
+
+ neljas.txt | 0
+ toinen.txt | 1 +
+ 2 files changed, 1 insertion(+)
+
+commit a40d89e530c4fdc62712b67c4a18d08c94a848eb
+Author: jokujohku <johku2@gmail.com>
+Date:   Thu Oct 31 10:57:43 2019 +0200
+
+    toinen.txt luotu
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
