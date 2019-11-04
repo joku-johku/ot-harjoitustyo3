@@ -80,4 +80,27 @@ public void kortinSaldoEiYlitaMaksimiarvoa() {
     kortti.lataaRahaa(200);
     assertEquals("Kortilla on rahaa 150.0 euroa", kortti.toString());
 }
+
+@Test
+    public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
+        kortti.syoEdullisesti();
+        kortti.syoEdullisesti();
+        kortti.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 1.0 euroa", kortti.toString());
+    }
+    @Test
+    public void negatiivisenSummanLataaminenEiMuutaSaldoa() {
+        kortti.lataaRahaa(-20);
+        assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+    }
+     public void ostaEdullinenLounasKunRahaaOnVainSiihen() {
+         kortti = new Maksukortti(2.5);
+         kortti.syoEdullisesti();
+        assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
+    }
+      public void ostaMaukasLounasKunRahaaOnVainSiihen() {
+         kortti = new Maksukortti(4.0);
+         kortti.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
+    }
 }
