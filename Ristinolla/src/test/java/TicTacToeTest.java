@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+import java.lang.reflect.Field;
+import javax.swing.JButton;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,6 +19,17 @@ import static org.junit.Assert.*;
  * @author Omistaja
  */
 public class TicTacToeTest {
+      String one = "X";
+     String two = "X";
+     String three = "X";
+     String playerOne;
+     
+   
+
+private String calculate(String one, String two, String three){
+    return "PlayerOne wins!";
+}
+
     
     public TicTacToeTest() {
     }
@@ -30,6 +44,9 @@ public class TicTacToeTest {
     
     @Before
     public void setUp() {
+          String one = "X";
+     String two = "X";
+     String three = "X";
     }
     
     @After
@@ -41,4 +58,20 @@ public class TicTacToeTest {
     //
      @Test
      public void hello() {}
+     
+
+
+     @Test
+    public void XWinsPossibilityOne() {
+    assertEquals("PlayerOne wins!", calculate(one,two,three));
+    }
 }
+
+
+
+  
+    
+
+
+     
+
