@@ -107,6 +107,11 @@ public class TicTacToe extends javax.swing.JFrame {
         
         if (one != "" && two != "" && three != "" && four != "" && five != "" && six != ""
                 && seven != "" && eight != "" && nine != "") {
+            JOptionPane.showMessageDialog(this, 
+               "It's a tie game!",
+                "Tie",
+                JOptionPane.INFORMATION_MESSAGE);
+            resetGame();
             
         }
     }
