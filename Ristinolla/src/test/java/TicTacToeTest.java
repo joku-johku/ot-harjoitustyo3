@@ -26,7 +26,7 @@ public class TicTacToeTest {
      
    
 
-private String calculate(String one, String two, String three){
+private String check(String one, String two, String three){
     return "PlayerOne wins!";
 }
 
@@ -63,7 +63,7 @@ private String calculate(String one, String two, String three){
 
      @Test
     public void XWinsPossibilityOne() {
-    assertEquals("PlayerOne wins!", calculate(one,two,three));
+    assertEquals("PlayerOne wins!", check(one,two,three));
     }
 }
 
