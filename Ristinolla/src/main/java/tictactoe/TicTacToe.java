@@ -28,16 +28,16 @@ public class TicTacToe extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
-      private void setPlayerName() {
+    private void setPlayerName() {
         
         if (whoseTurn.equalsIgnoreCase("X")) {
             playersTurn = playerOne;
         } else {
             playersTurn = playerTwo;
         }
-            jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
-                + "   \t" + playersTurn + "'s move  " + playerTwo 
-                + "'s Score is: " + String.valueOf(playerTwoCount));
+        jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
+            + "   \t" + playersTurn + "'s move  " + playerTwo 
+            + "'s Score is: " + String.valueOf(playerTwoCount));
     }
     
     private void setScore() {  
@@ -56,12 +56,12 @@ public class TicTacToe extends javax.swing.JFrame {
                 "Player two name: ",
                 "Player name",
                 JOptionPane.INFORMATION_MESSAGE);
-          if (playerOne.equals("")) {
-              playerOne = "Player one";
-          } 
-          if (playerTwo.equals("")) {
-              playerTwo = "Player two";
-          }    
+        if (playerOne.equals("")) {
+            playerOne = "Player one";
+        } 
+        if (playerTwo.equals("")) {
+            playerTwo = "Player two";
+        }    
     }
     
     private void determineWhoseTurn() {
@@ -107,7 +107,7 @@ public class TicTacToe extends javax.swing.JFrame {
                 && five != "" && six != ""
                 && seven != "" && eight != "" && nine != "") {
             JOptionPane.showMessageDialog(this, 
-               "It's a tie game!",
+                "It's a tie game!",
                 "Tie",
                 JOptionPane.INFORMATION_MESSAGE);
             resetGame();
@@ -143,49 +143,49 @@ public class TicTacToe extends javax.swing.JFrame {
         if (one == "X" && two == "X" && three == "X") {
             xWins();
         }
-         if (four == "X" && five == "X" && six == "X") {
+        if (four == "X" && five == "X" && six == "X") {
             xWins();
         }
-          if (seven == "X" && eight == "X" && nine == "X") {
+        if (seven == "X" && eight == "X" && nine == "X") {
             xWins();
         }
-           if (one == "X" && four == "X" && seven == "X") {
+        if (one == "X" && four == "X" && seven == "X") {
             xWins();
         }
-            if (two == "X" && five == "X" && eight == "X") {
+        if (two == "X" && five == "X" && eight == "X") {
             xWins();
         }
-            if (three == "X" && six == "X" && nine == "X") {
+        if (three == "X" && six == "X" && nine == "X") {
             xWins();
         }
-            if (one == "X" && five == "X" && nine == "X") {
-            xWins();
-        } 
-            if (three == "X" && five == "X" && seven == "X") {
+        if (one == "X" && five == "X" && nine == "X") {
             xWins();
         } 
-            if (one == "0" && two == "0" && three == "0") {
+        if (three == "X" && five == "X" && seven == "X") {
+            xWins();
+        } 
+        if (one == "0" && two == "0" && three == "0") {
             oWins();
         }
-         if (four == "0" && five == "0" && six == "0") {
+        if (four == "0" && five == "0" && six == "0") {
             oWins();
         }
-          if (seven == "0" && eight == "0" && nine == "0") {
+        if (seven == "0" && eight == "0" && nine == "0") {
             oWins();
         }
-           if (one == "0" && four == "0" && seven == "0") {
+        if (one == "0" && four == "0" && seven == "0") {
             oWins();
         }
-            if (two == "0" && five == "0" && eight == "0") {
+        if (two == "0" && five == "0" && eight == "0") {
             oWins();
         }
-            if (three == "0" && six == "0" && nine == "0") {
+        if (three == "0" && six == "0" && nine == "0") {
             oWins();
         }
-            if (one == "0" && five == "0" && nine == "0") {
+        if (one == "0" && five == "0" && nine == "0") {
             oWins();
         } 
-            if (three == "0" && five == "0" && seven == "0") {
+        if (three == "0" && five == "0" && seven == "0") {
             oWins();
         }     
            
@@ -359,12 +359,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            jButton2.setText(whoseTurn);
-          if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton2.setForeground(Color.pink);
-          } else {
-              jButton2.setForeground(Color.orange);
-          }
+        jButton2.setText(whoseTurn);
+        if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton2.setForeground(Color.pink);
+        } else {
+            jButton2.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -372,12 +372,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          jButton1.setText(whoseTurn);
-         if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton1.setForeground(Color.pink);
-          } else {
-              jButton1.setForeground(Color.orange);
-          }
+        jButton1.setText(whoseTurn);
+        if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton1.setForeground(Color.pink);
+        } else {
+            jButton1.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -385,12 +385,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         jButton3.setText(whoseTurn);
-         if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton3.setForeground(Color.pink);
-          } else {
-              jButton3.setForeground(Color.orange);
-          }
+        jButton3.setText(whoseTurn);
+        if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton3.setForeground(Color.pink);
+        } else {
+            jButton3.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -398,12 +398,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         jButton4.setText(whoseTurn);
-          if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton4.setForeground(Color.pink);
-          } else {
-              jButton4.setForeground(Color.orange);
-          }
+        jButton4.setText(whoseTurn);
+            if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton4.setForeground(Color.pink);
+        } else {
+            jButton4.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -411,12 +411,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-         jButton5.setText(whoseTurn);
-          if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton5.setForeground(Color.pink);
+        jButton5.setText(whoseTurn);
+            if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton5.setForeground(Color.pink);
           } else {
-              jButton5.setForeground(Color.orange);
-          }
+            jButton5.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -424,12 +424,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-          jButton6.setText(whoseTurn);
-          if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton6.setForeground(Color.pink);
-          } else {
-              jButton6.setForeground(Color.orange);
-          }
+        jButton6.setText(whoseTurn);
+        if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton6.setForeground(Color.pink);
+        } else {
+            jButton6.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -437,12 +437,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-         jButton7.setText(whoseTurn);
-           if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton7.setForeground(Color.pink);
-          } else {
-              jButton7.setForeground(Color.orange);
-          }
+        jButton7.setText(whoseTurn);
+            if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton7.setForeground(Color.pink);
+        } else {
+            jButton7.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -450,12 +450,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-         jButton8.setText(whoseTurn);
-           if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton8.setForeground(Color.pink);
-          } else {
-              jButton8.setForeground(Color.orange);
-          }
+        jButton8.setText(whoseTurn);
+            if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton8.setForeground(Color.pink);
+        } else {
+            jButton8.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
@@ -463,12 +463,12 @@ public class TicTacToe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-         jButton9.setText(whoseTurn);
-           if (whoseTurn.equalsIgnoreCase("X")) {
-              jButton9.setForeground(Color.pink);
-          } else {
-              jButton9.setForeground(Color.orange);
-          }
+        jButton9.setText(whoseTurn);
+            if (whoseTurn.equalsIgnoreCase("X")) {
+            jButton9.setForeground(Color.pink);
+        } else {
+            jButton9.setForeground(Color.orange);
+        }
         determineWhoseTurn();
         determineIfWin();
         tieGame();
