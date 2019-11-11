@@ -1,4 +1,4 @@
-package Ristinolla;
+package tictactoe;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
