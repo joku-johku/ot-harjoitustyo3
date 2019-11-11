@@ -399,7 +399,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jButton4.setText(whoseTurn);
-            if (whoseTurn.equalsIgnoreCase("X")) {
+        if (whoseTurn.equalsIgnoreCase("X")) {
             jButton4.setForeground(Color.pink);
         } else {
             jButton4.setForeground(Color.orange);
@@ -412,7 +412,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         jButton5.setText(whoseTurn);
-            if (whoseTurn.equalsIgnoreCase("X")) {
+        if (whoseTurn.equalsIgnoreCase("X")) {
             jButton5.setForeground(Color.pink);
           } else {
             jButton5.setForeground(Color.orange);
@@ -438,7 +438,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         jButton7.setText(whoseTurn);
-            if (whoseTurn.equalsIgnoreCase("X")) {
+        if (whoseTurn.equalsIgnoreCase("X")) {
             jButton7.setForeground(Color.pink);
         } else {
             jButton7.setForeground(Color.orange);
@@ -451,7 +451,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         jButton8.setText(whoseTurn);
-            if (whoseTurn.equalsIgnoreCase("X")) {
+        if (whoseTurn.equalsIgnoreCase("X")) {
             jButton8.setForeground(Color.pink);
         } else {
             jButton8.setForeground(Color.orange);
@@ -464,7 +464,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         jButton9.setText(whoseTurn);
-            if (whoseTurn.equalsIgnoreCase("X")) {
+        if (whoseTurn.equalsIgnoreCase("X")) {
             jButton9.setForeground(Color.pink);
         } else {
             jButton9.setForeground(Color.orange);
