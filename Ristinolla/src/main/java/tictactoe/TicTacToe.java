@@ -40,11 +40,11 @@ public class TicTacToe extends javax.swing.JFrame {
             + "'s Score is: " + String.valueOf(playerTwoCount));
     }
     
-    private void setScore() {  
-        jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
-                + "  \t" + playerTwo
-                + "'s Score is: " + String.valueOf(playerTwoCount));
-    }
+//    private void setScore() {  
+//        jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
+//                + "  \t" + playerTwo
+//                + "'s Score is: " + String.valueOf(playerTwoCount));
+//    }
     
     private void getPlayerNames() {
         playerOne = JOptionPane.showInputDialog(this,
@@ -78,7 +78,7 @@ public class TicTacToe extends javax.swing.JFrame {
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerOneCount++;
-        resetGame();
+//        resetGame();
        
     }
     
@@ -88,46 +88,46 @@ public class TicTacToe extends javax.swing.JFrame {
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerTwoCount++;
-        resetGame();
+//        resetGame();
         
     }
     
-    private void tieGame() {
-        String one = jButton1.getText();
-        String two = jButton2.getText();
-        String three = jButton3.getText();
-        String four = jButton4.getText();
-        String five = jButton5.getText();
-        String six = jButton6.getText();
-        String seven = jButton7.getText();
-        String eight = jButton8.getText();
-        String nine = jButton9.getText();
-        
-        if (one != "" && two != "" && three != "" && four != "" 
-                && five != "" && six != ""
-                && seven != "" && eight != "" && nine != "") {
-            JOptionPane.showMessageDialog(this, 
-                "It's a tie game!",
-                "Tie",
-                JOptionPane.INFORMATION_MESSAGE);
-            resetGame();
-            
-        }
-    }
+//    private void tieGame() {
+//        String one = jButton1.getText();
+//        String two = jButton2.getText();
+//        String three = jButton3.getText();
+//        String four = jButton4.getText();
+//        String five = jButton5.getText();
+//        String six = jButton6.getText();
+//        String seven = jButton7.getText();
+//        String eight = jButton8.getText();
+//        String nine = jButton9.getText();
+//        
+//        if (one != "" && two != "" && three != "" && four != "" 
+//                && five != "" && six != ""
+//                && seven != "" && eight != "" && nine != "") {
+//            JOptionPane.showMessageDialog(this, 
+//                "It's a tie game!",
+//                "Tie",
+//                JOptionPane.INFORMATION_MESSAGE);
+//            resetGame();
+//            
+//        }
+//    }
     
-    private void resetGame() {
-        jButton1.setText("");
-        jButton2.setText("");
-        jButton3.setText("");
-        jButton4.setText("");
-        jButton5.setText("");
-        jButton6.setText("");
-        jButton7.setText("");
-        jButton8.setText("");
-        jButton9.setText("");
-        
-        setScore();
-    }
+//    private void resetGame() {
+//        jButton1.setText("");
+//        jButton2.setText("");
+//        jButton3.setText("");
+//        jButton4.setText("");
+//        jButton5.setText("");
+//        jButton6.setText("");
+//        jButton7.setText("");
+//        jButton8.setText("");
+//        jButton9.setText("");
+//        
+//        setScore();
+//    }
     
     private void determineIfWin() {
         String one = jButton1.getText();
@@ -357,7 +357,7 @@ public class TicTacToe extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jButton2.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -367,10 +367,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jButton1.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -380,10 +380,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jButton3.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -393,10 +393,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
-        setPlayerName();
+//        tieGame();
+//        setPlayerName();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jButton4.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -406,23 +406,23 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton4ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         jButton5.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
             jButton5.setForeground(Color.pink);
-          } else {
+        } else {
             jButton5.setForeground(Color.orange);
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton5ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         jButton6.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -432,10 +432,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton6ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         jButton7.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -445,10 +445,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton7ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         jButton8.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -458,10 +458,10 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton8ActionPerformed
-
+// CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         jButton9.setText(whoseTurn);
         if (whoseTurn.equalsIgnoreCase("X")) {
@@ -471,7 +471,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-        tieGame();
+//        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton9ActionPerformed
 
