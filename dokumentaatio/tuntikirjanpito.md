@@ -6,3 +6,4 @@ päivä | aika | mitä tein
 9.11 | 3,5h | Sain mavenin toimimaan Windowsilla viimeinkin (Huh!). Loin JAR-tiedoston. Nyt sovellus toimii myös komentoriviltä.
 11.11 | 1,5h | Siistin koodia checkstylea silmällä pitäen sekä tutustuin viikon neljä tavoitteisiin.  
 13.11 | 1h | Arkkitehtuuri tiedosto ja luokkakaavion teko. Viikon neljä palautusta silmällä pitäen.
+yht. | 14h |
