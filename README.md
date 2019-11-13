@@ -11,6 +11,6 @@
 [testikattavuuskuva](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko2/testikattavuuskuva.png)
 
 ## Dokumentaatio  
-[arkkitehtuurikuvaus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/arkkitehtuuri.md)
+[arkkitehtuurikuvaus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/arkkitehtuuri.md)  
 [vaatimusmäärittely](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [työaikakirjanpito](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/tuntikirjanpito.md)  
