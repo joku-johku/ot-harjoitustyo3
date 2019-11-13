@@ -1,1 +1,1 @@
-![Screenshot](kuva.png)
+![Luokkakaavio](kuva.png)
