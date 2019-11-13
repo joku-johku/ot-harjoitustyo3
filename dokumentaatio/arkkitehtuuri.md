@@ -1,1 +1,1 @@
-![picture](kuva.png)
+![alt_text](images/kuva.png)
