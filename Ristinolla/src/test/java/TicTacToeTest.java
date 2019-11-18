@@ -24,6 +24,7 @@ public class TicTacToeTest {
      String three = "X";
      String playerOne;
      
+     
    
 
 private String check(String one, String two, String three){
@@ -44,9 +45,7 @@ private String check(String one, String two, String three){
     
     @Before
     public void setUp() {
-          String one = "X";
-     String two = "X";
-     String three = "X";
+       
     }
     
     @After
@@ -63,7 +62,18 @@ private String check(String one, String two, String three){
 
      @Test
     public void XWinsPossibilityOne() {
+      
     assertEquals("PlayerOne wins!", check(one,two,three));
+    }
+    
+   
+    
+     @Test
+    public void XWinsPossibilityTwo() {
+         String four = "X";
+     String five = "X";
+     String six = "X";
+    assertEquals("PlayerOne wins!", check(four,five,six));
     }
 }
 
