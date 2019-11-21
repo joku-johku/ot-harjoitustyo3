@@ -40,11 +40,11 @@ public class TicTacToe extends javax.swing.JFrame {
             + "'s Score is: " + String.valueOf(playerTwoCount));
     }
     
-//    private void setScore() {  
-//        jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
-//                + "  \t" + playerTwo
-//                + "'s Score is: " + String.valueOf(playerTwoCount));
-//    }
+    private void setScore() {  
+        jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
+                + "  \t" + playerTwo
+                + "'s Score is: " + String.valueOf(playerTwoCount));
+    }
     
     private void getPlayerNames() {
         playerOne = JOptionPane.showInputDialog(this,
@@ -78,7 +78,7 @@ public class TicTacToe extends javax.swing.JFrame {
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerOneCount++;
-//        resetGame();
+        resetGame();
        
     }
     
@@ -88,46 +88,46 @@ public class TicTacToe extends javax.swing.JFrame {
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerTwoCount++;
-//        resetGame();
+        resetGame();
         
     }
     
-//    private void tieGame() {
-//        String one = jButton1.getText();
-//        String two = jButton2.getText();
-//        String three = jButton3.getText();
-//        String four = jButton4.getText();
-//        String five = jButton5.getText();
-//        String six = jButton6.getText();
-//        String seven = jButton7.getText();
-//        String eight = jButton8.getText();
-//        String nine = jButton9.getText();
-//        
-//        if (one != "" && two != "" && three != "" && four != "" 
-//                && five != "" && six != ""
-//                && seven != "" && eight != "" && nine != "") {
-//            JOptionPane.showMessageDialog(this, 
-//                "It's a tie game!",
-//                "Tie",
-//                JOptionPane.INFORMATION_MESSAGE);
-//            resetGame();
-//            
-//        }
-//    }
-    
-//    private void resetGame() {
-//        jButton1.setText("");
-//        jButton2.setText("");
-//        jButton3.setText("");
-//        jButton4.setText("");
-//        jButton5.setText("");
-//        jButton6.setText("");
-//        jButton7.setText("");
-//        jButton8.setText("");
-//        jButton9.setText("");
-//        
-//        setScore();
-//    }
+    private void tieGame() {
+        String one = jButton1.getText();
+        String two = jButton2.getText();
+        String three = jButton3.getText();
+        String four = jButton4.getText();
+        String five = jButton5.getText();
+        String six = jButton6.getText();
+        String seven = jButton7.getText();
+        String eight = jButton8.getText();
+        String nine = jButton9.getText();
+        
+        if (one != "" && two != "" && three != "" && four != "" 
+                && five != "" && six != ""
+                && seven != "" && eight != "" && nine != "") {
+            JOptionPane.showMessageDialog(this, 
+                "It's a tie game!",
+                "Tie",
+                JOptionPane.INFORMATION_MESSAGE);
+            resetGame();
+            
+        }
+    }
+//    
+    private void resetGame() {
+        jButton1.setText("");
+        jButton2.setText("");
+        jButton3.setText("");
+        jButton4.setText("");
+        jButton5.setText("");
+        jButton6.setText("");
+        jButton7.setText("");
+        jButton8.setText("");
+        jButton9.setText("");
+        
+        setScore();
+    }
     
     private void determineIfWin() {
         String one = jButton1.getText();
