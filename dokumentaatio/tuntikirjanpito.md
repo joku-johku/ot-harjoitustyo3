@@ -7,4 +7,5 @@ päivä | aika | mitä tein
 11.11 | 1,5h | Siistin koodia checkstylea silmällä pitäen sekä tutustuin viikon neljä tavoitteisiin.  
 13.11 | 1h | Arkkitehtuuri tiedosto ja luokkakaavion teko. Viikon neljä palautusta silmällä pitäen.  
 18.11 | 4h | Viikon 5 harjoitustön tehtävien tekemistä sekä testejä ja koodaamista. Pelin resetointi ja tasapeli tehty.  
-yht. | 18h |
+21.11 | 3h | Tasapeli toimii nyt kunnolla. Sekä resetointi.
+yht. | 21h |
