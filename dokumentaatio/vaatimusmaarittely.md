@@ -9,7 +9,9 @@ Sovelluksella tulee olemaan ainoastaan yksi käyttäjärooli: normaalikäyttäj�
 ## Suunnitellut toiminnallisuudet  
 
 ### Perusversio  
-Perusversiossa kahden eri pelaajan pitää kirjoittaa nimensä. Kun käyttäjät ovat onnistuneesti kirjautuneet sisään, päästään pelaamaan Ristinolla-peliä 3x3 kokoisella ruudukolla. Perusversiossa ensimmäinen pelaaja on aina risti. Jos peli päättyy tasan lähettää sovellusviestin :"It's a tie !". Taas voiton sattuessa sovellus lähettää viestin: "Player -käyttäjätunnus- won!".
+Perusversiossa kahden eri pelaajan pitää kirjoittaa nimensä. Kun käyttäjät ovat onnistuneesti kirjautuneet sisään, päästään pelaamaan Ristinolla-peliä 3x3 kokoisella ruudukolla. Perusversiossa ensimmäinen pelaaja on aina risti. Jos peli päättyy tasan lähettää sovellusviestin :"It's a tie !". Taas voiton sattuessa sovellus lähettää viestin: "Player -käyttäjätunnus- won!".  
+
+Viikon 4 palautuksessa toimivat ominaisuudet: Peli huomioi tasapelin ja resetoi pelin jos jompi kumpi pelaajista voittaa tai sattuu tasapelin. Myös pisteiden tallennus onnistuu. Käyttäjätunnuksen kysyminen puuttuu vielä.
 
 ### Jatkokehitysideoita
 * Luoda oma käyttäjätunnus, jonka pitää olla uniikki ja vähintään neljä merkkiä pitkä.
