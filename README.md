@@ -34,7 +34,7 @@ Komento
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _Ristinolla.jar_
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _TicTacToe.jar_
 
 ### JavaDoc
 
