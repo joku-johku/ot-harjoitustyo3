@@ -1,19 +1,59 @@
- # <h1> Ohjelmistotekniikka, harjoitustyö
- 
- ## Tehtävät
- 
- ### Viikko1
-
-[gitlog.txt](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko1/gitlog.txt)  
-[komentorivi.txt](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko1/komentorivi.txt)  
-
-### Viikko2
-[testikattavuuskuva](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/laskarit/viikko2/testikattavuuskuva.png)  
-
-### Vikko3
-[Palautukset](https://github.com/joku-johku/ot-harjoitustyo3/tree/master/laskarit/viikko3)
+ # <h1> Ristinolla  
+ Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa merkkiä vierekkäin joko pysty-, vaaka-, vinosuuntaan.  
+ Jokaisella pelaajalla on oma käyttäjätunnuksensa ja salasanansa, jonka avulla kerätään voittojon määrää. Jos sattuu tasapeli kumpikaan pelaaja ei saa pistettä.
 
 ## Dokumentaatio  
 [arkkitehtuurikuvaus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/arkkitehtuuri.md)  
 [vaatimusmäärittely](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [työaikakirjanpito](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/tuntikirjanpito.md)  
+
+## Releaset  
+[Viikko 5]()
+
+## Komentorivitoiminnot
+
+### Testaus  
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+
+### Suoritettavan jarin generointi
+
+Komento
+
+```
+mvn package
+```
+
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _Ristinolla.jar_
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
+### Checkstyle
+
+Tiedostoon [checkstyle.xml]() määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+
