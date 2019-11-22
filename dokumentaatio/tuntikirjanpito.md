@@ -8,5 +8,5 @@ päivä | aika | mitä tein
 13.11 | 1h | Arkkitehtuuri tiedosto ja luokkakaavion teko. Viikon neljä palautusta silmällä pitäen.  
 18.11 | 4h | Viikon 5 harjoitustön tehtävien tekemistä sekä testejä ja koodaamista. Pelin resetointi ja tasapeli tehty.  
 21.11 | 3h | Tasapeli toimii nyt kunnolla. Sekä resetointi.
-22.11 | 4h | Dao-luokkien tekemistä. Sekä testit kattavuus on nyt 60%.
+22.11 | 4h | Dao-luokkien tekemistä. Sekä testit kattavuus on nyt 60%. Sekä checkstyle toimii nyt oikein.
 yht. | 25h |
