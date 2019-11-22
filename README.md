@@ -1,6 +1,5 @@
  # <h1> Ristinolla  
- Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa merkkiä vierekkäin joko pysty-, vaaka-, vinosuuntaan.  
- Jokaisella pelaajalla on oma käyttäjätunnuksensa ja salasanansa, jonka avulla kerätään voittojon määrää. Jos sattuu tasapeli kumpikaan pelaaja ei saa pistettä.
+Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa merkkiä vierekkäin joko pysty-, vaaka-, vinosuuntaan. Jokaisella pelaajalla on oma käyttäjätunnuksensa ja salasanansa, jonka avulla kerätään voittojon määrää. Jos sattuu tasapeli kumpikaan pelaaja ei saa pistettä.
 
 ## Dokumentaatio  
 [arkkitehtuurikuvaus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/arkkitehtuuri.md)  
