@@ -367,7 +367,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton2ActionPerformed
     // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -380,7 +380,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton1ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -393,8 +393,8 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
-//        setPlayerName();
+        tieGame();
+        setPlayerName();
     }//GEN-LAST:event_jButton3ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -406,7 +406,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton4ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -419,7 +419,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton5ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -432,7 +432,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton6ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -445,7 +445,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton7ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -458,7 +458,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton8ActionPerformed
 // CHECKSTYLE IGNORE check FOR NEXT 1 LINES
@@ -471,7 +471,7 @@ public class TicTacToe extends javax.swing.JFrame {
         }
         determineWhoseTurn();
         determineIfWin();
-//        tieGame();
+        tieGame();
         setPlayerName();
     }//GEN-LAST:event_jButton9ActionPerformed
 
