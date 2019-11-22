@@ -1,12 +1,16 @@
-Luokkakaavio ja pakkauskaavio harjoitustyön viikon 4 palautusta varten.  
+# Arkkitehtuurikuvaus  
 
+## Rakenne
 
-![Luokkakaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/kuva.png) 
+![Luokkakaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/kuva.png)  
+Pakkaus tictactoeui sisältää JFrame:lla toteutetun käyttöliittymän tictactoe.domain sovelluslogiikan ja tictactoe.dao tietojen pysyväistallennuksesta vastaavan koodin.
 
-
+## Sovelluslogiikka
 
 ![Pakkauskaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pakkauskaavio.png)
 
+
+### Päätoiminnallisuudet
 Sekvenssikaavio viikon 5 palautusta varten.  
 
 
