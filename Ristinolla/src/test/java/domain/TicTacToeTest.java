@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package domain;
 
-import java.awt.event.ActionEvent;
-import java.lang.reflect.Field;
-import javax.swing.JButton;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,18 +17,6 @@ import static org.junit.Assert.*;
  * @author Omistaja
  */
 public class TicTacToeTest {
-      String one = "X";
-     String two = "X";
-     String three = "X";
-     String playerOne;
-     
-     
-   
-
-private String check(String one, String two, String three){
-    return "PlayerOne wins!";
-}
-
     
     public TicTacToeTest() {
     }
@@ -45,7 +31,6 @@ private String check(String one, String two, String three){
     
     @Before
     public void setUp() {
-       
     }
     
     @After
@@ -58,30 +43,24 @@ private String check(String one, String two, String three){
      @Test
      public void hello() {}
      
-
-
-     @Test
-    public void XWinsPossibilityOne() {
-      
-    assertEquals("PlayerOne wins!", check(one,two,three));
+      @Test
+    public void equalWhenSameId() {
+        TicTacToe t1 = new TicTacToe(10, null, null);
+        TicTacToe t2 = new TicTacToe(10, null, null);
+        assertTrue(t1.equals(t2));
     }
-    
-   
-    
-     @Test
-    public void XWinsPossibilityTwo() {
-         String four = "X";
-     String five = "X";
-     String six = "X";
-    assertEquals("PlayerOne wins!", check(four,five,six));
-    }
-}
-
-
-
   
+    @Test
+    public void notEqualWhenDifferentId() {
+        TicTacToe t1 = new TicTacToe(10, null, null);
+        TicTacToe t2 = new TicTacToe(2, null, null);
+        assertFalse(t1.equals(t2));
+    }   
     
-
-
-     
-
+    @Test
+    public void nonEqualWhenDifferentType() {
+        TicTacToe t = new TicTacToe(10, null, null);
+        Object o = new Object();
+        assertFalse(t.equals(o));
+    }      
+}

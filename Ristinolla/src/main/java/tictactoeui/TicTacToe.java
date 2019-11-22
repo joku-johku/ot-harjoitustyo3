@@ -1,4 +1,4 @@
-package tictactoe;
+package tictactoeui;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;

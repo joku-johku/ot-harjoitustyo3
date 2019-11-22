@@ -84,10 +84,11 @@
     <module name='FileLength'>
         <property name='max' value='500' />
     </module>
-    <module name="SuppressWithNearbyCommentFilter">
-    <property name="commentFormat" value="CHECKSTYLE IGNORE (\w+) FOR NEXT (\d+) LINES"/>
-    <property name="checkFormat" value="$1"/>
-    <property name="influenceFormat" value="$2"/>
+
+    <module name="SuppressionFilter">
+        <property name="file" value="skipped_files.xml" />
+
+    
 </module>
 
 </module>
