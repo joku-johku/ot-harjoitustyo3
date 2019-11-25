@@ -9,7 +9,14 @@ Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa 
 ## Releaset  
 [Viikko 5](https://github.com/joku-johku/ot-harjoitustyo3/releases)
 
-## Komentorivitoiminnot
+## Komentorivitoiminnot  
+
+### Ohjelmansuorittaminen  
+Ohjelman suorittaminen komentoriviltä tapahtuu komennolla  
+
+```
+mvn compile exec:java -Dexec.mainClass=domain.Main  
+```
 
 ### Testaus  
 Testit suoritetaan komennolla
