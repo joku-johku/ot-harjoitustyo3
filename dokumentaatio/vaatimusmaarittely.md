@@ -13,7 +13,9 @@ Perusversiossa kahden eri pelaajan pitää kirjoittaa nimensä. Kun käyttäjät
 
 ### Tehty
 
-Viikon 4 palautuksessa toimivat ominaisuudet: Peli huomioi tasapelin ja resetoi pelin jos jompi kumpi pelaajista voittaa tai sattuu tasapelin. Myös pisteiden tallennus onnistuu. Peliruudussa kerrotaan kumman pelaajan vuoro on seuraavaksi. Käyttäjätunnuksen kysyminen puuttuu vielä.
+Viikon 4 palautuksessa toimivat ominaisuudet: Peli huomioi tasapelin ja resetoi pelin jos jompi kumpi pelaajista voittaa tai sattuu tasapelin. Myös pisteiden tallennus onnistuu. Peliruudussa kerrotaan kumman pelaajan vuoro on seuraavaksi. Käyttäjätunnuksen kysyminen puuttuu vielä.  
+
+Viikon 5 palautuksessa toimivat ominaisuudet: ohjelma kysyy pelaajien nimiä. Nimen pitää olla vähintään neljä merkkiä pitkä. Jos näin ei ole nimeä kysytään uudelleen. Pelaajien nimet näkyvät nyt myös pistelaskussa ja vuoronannossa.
 
 ### Jatkokehitysideoita
 * Luoda oma käyttäjätunnus, jonka pitää olla uniikki ja vähintään neljä merkkiä pitkä.
