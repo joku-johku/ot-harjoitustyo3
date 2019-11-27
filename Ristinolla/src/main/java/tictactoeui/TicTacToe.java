@@ -25,7 +25,10 @@ public class TicTacToe extends javax.swing.JFrame {
     public TicTacToe() {
         initComponents();
         setSize(600, 600);
+        setTitle("TicTacToe");
         setLocationRelativeTo(null);
+        getPlayerOneName();
+        getPlayerTwoName();
     }
     
     private void setPlayerName() {
@@ -46,21 +49,32 @@ public class TicTacToe extends javax.swing.JFrame {
                 + "'s Score is: " + String.valueOf(playerTwoCount));
     }
     
-    private void getPlayerNames() {
+    private void getPlayerOneName() {
         playerOne = JOptionPane.showInputDialog(this,
                 "Player one name: ",
                 "Player name",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+          if (playerOne.equals("") || playerOne.length()<4) {
+            JOptionPane.showMessageDialog(this,
+                "Player name too short or already in use ",
+                "Wrong name",
+                JOptionPane.INFORMATION_MESSAGE);
+           getPlayerOneName();
+        }
+    }
+    
+     private void getPlayerTwoName() {
         playerTwo = JOptionPane.showInputDialog(this,
                 "Player two name: ",
                 "Player name",
                 JOptionPane.INFORMATION_MESSAGE);
-        if (playerOne.equals("")) {
-            playerOne = "Player one";
-        } 
-        if (playerTwo.equals("")) {
-            playerTwo = "Player two";
+      
+        if (playerOne.equals("") || playerTwo.length()<4) {
+            JOptionPane.showMessageDialog(this,
+                "Player name too short or already in use ",
+                "Wrong name",
+                JOptionPane.INFORMATION_MESSAGE);
+           getPlayerTwoName();
         }    
     }
     
@@ -74,7 +88,7 @@ public class TicTacToe extends javax.swing.JFrame {
     
     private void xWins() {
         JOptionPane.showMessageDialog(this, 
-                playerOne + " wins",
+                playerOne + " wins!",
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerOneCount++;
@@ -84,7 +98,7 @@ public class TicTacToe extends javax.swing.JFrame {
     
     private void oWins() {
         JOptionPane.showMessageDialog(this, 
-                playerTwo + " wins",
+                playerTwo + " wins!",
                 "Winner",
                 JOptionPane.INFORMATION_MESSAGE);
         playerTwoCount++;
