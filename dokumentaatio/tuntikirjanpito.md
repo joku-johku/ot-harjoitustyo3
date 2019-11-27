@@ -10,4 +10,5 @@ päivä | aika | mitä tein
 21.11 | 3h | Tasapeli toimii nyt kunnolla. Sekä resetointi.
 22.11 | 4h | Dao-luokkien tekemistä. Sekä testit kattavuus on nyt 60%. Sekä checkstyle toimii nyt oikein.
 26.11 | 2h | Loppusilaukset viikon 4 deadlinea varten. Tustustumista viikon 5 tavoitteisiin.
-yht. | 27h |
+27.11 | 2h | Tein käyttäjätunnuksen kysymisen, mikä toimii nyt oikein. Sekä viikon 5 release ja jarin generointi kunnossa. Testit OK. sekä viikon viisi palautuksen sekvenssikaavio.
+yht. | 29h |
