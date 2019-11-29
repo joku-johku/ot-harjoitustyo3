@@ -8,7 +8,9 @@ Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa 
 
 [työaikakirjanpito](http://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/tuntikirjanpito.md)  
 
-[käyttöohje](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kayttoohje.md)
+[käyttöohje](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kayttoohje.md)  
+
+[testausdokumentti](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/testausdokumentti.md)
 
 ## Releaset  
 [Viikko 5](https://github.com/joku-johku/ot-harjoitustyo3/releases)
