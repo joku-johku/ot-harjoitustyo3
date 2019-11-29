@@ -60,8 +60,7 @@ Tasapeli:
 
 ![kallevoittaa](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/tasapeli.PNG)  
 
-Aina kun yksi peli päättyy ja painetaan ok-nappia peli resetoi ja tallentaa pisteen pelin voittajalle pistetaulukkoon, joka näkyy  
-ruudukon alalaidassa. Jos tulee tasapeli kumpikaan pelaaja ei saa pistettä.
+Aina kun yksi peli päättyy ja painetaan ok-nappia peli resetoi ja tallentaa pisteen pelin voittajalle pistetaulukkoon, joka näkyy ruudukon alalaidassa. Jos tulee tasapeli kumpikaan pelaaja ei saa pistettä.
 
 
 
