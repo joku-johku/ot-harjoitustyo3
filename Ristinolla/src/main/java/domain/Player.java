@@ -11,19 +11,19 @@ package domain;
  */
 public class Player {
     private String name;
-    private String username;
+    private String playername;
     
-    public Player(String name, String username) {
+    public Player(String name, String playername) {
         this.name = name;
-        this.username = username;
+        this.playername = playername;
     }
     
     public String getName() {
         return name;
     }
     
-    public String getUsername() {
-        return username;
+    public String getPlayername() {
+        return playername;
     }
      
     @Override
@@ -33,6 +33,6 @@ public class Player {
         }
         
         Player other = (Player) obj;
-        return username.equals(other.username);
+        return playername.equals(other.playername);
     }
 }

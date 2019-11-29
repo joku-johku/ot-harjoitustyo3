@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author Omistaja
  */
 public class TicTacToe extends javax.swing.JFrame {
+    private String startScene = "Start Scene";
     private String whoseTurn = "X";
     private String playerOne = "Player One";
     private String playerTwo = "Player Two";
@@ -49,6 +50,20 @@ public class TicTacToe extends javax.swing.JFrame {
                 + "'s Score is: " + String.valueOf(playerTwoCount));
     }
     
+//     private void getStartScene() {
+//        startScene = JOptionPane.showInputDialog(this,
+//                "Type: login, if you already have playername otherwise type: create new player ",
+//                "Start Scene",
+//                JOptionPane.INFORMATION_MESSAGE);
+//          if (startScene.equals("login")) {
+//            JOptionPane.showMessageDialog(this,
+//                "Player name too short or already in use ",
+//                "Wrong name",
+//                JOptionPane.INFORMATION_MESSAGE);
+//           getPlayerOneName();
+//        }
+//    }
+//    
     private void getPlayerOneName() {
         playerOne = JOptionPane.showInputDialog(this,
                 "Player one name: ",

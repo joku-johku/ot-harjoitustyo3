@@ -16,7 +16,7 @@ public interface PlayerDao {
     
     Player create(Player player) throws Exception;
 
-    Player findByUsername(String username);
+    Player findByPlayername(String playername);
 
     List<Player> getAll();
     
