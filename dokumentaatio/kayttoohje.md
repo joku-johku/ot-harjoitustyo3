@@ -1,6 +1,6 @@
 # Käyttöohje  
 
-Lataa tiedosto tictactoe.jar  
+Lataa tiedosto [tictactoe.jar](https://github.com/joku-johku/ot-harjoitustyo3/releases)  
 
 ## Konfigurointi  
 
