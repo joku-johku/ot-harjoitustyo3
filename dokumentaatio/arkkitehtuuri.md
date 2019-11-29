@@ -50,13 +50,13 @@ Sovelluksen juureen sijoitettu konfiguraatiotiedosto config.properties määritt
 
 Sovellus tallettaa käyttäjät seuraavassa formaatissa  
 
-`<mattimikko  
-  kallematti>`  
+`<mattimikko>`   
+`<kallematti>`  
   
 Pelaajien pisteet tallettavan tiedoston formaatti on seuraava  
 
-`<1; mattimikko; 10  
-  2; kallematti; 12>`  
+`<1; mattimikko; 10>`    
+`< 2; kallematti; 12>`  
   
 Kentät on eroteltu puolipistein. Ensimmäisenä käyttäjän tunniste eli id, toisena pisteiden määrä ja viimeisenä pisteiden omaavan käyttäjän käyttäjätunnus.
 
