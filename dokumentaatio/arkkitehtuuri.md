@@ -33,6 +33,8 @@ TicTacToeService pääsee käsiksi käyttäjiin ja pisteihin tietojen tallennuks
 
 TicTacToeServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:  
 
+![Luokka/pakkauskaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/luokka_pakkauskaavio.png)
+
 
 ### Tietojen pysyväistallennus  
 
