@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import dao.TicTacToeDao;
 import dao.PlayerDao;
+import domain.Player;
 /**
  *
  * @author Omistaja
