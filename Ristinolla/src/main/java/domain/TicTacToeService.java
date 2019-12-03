@@ -74,7 +74,7 @@ public class TicTacToeService {
         Player player = new Player(playername, name);
         try {
             playerDao.create(player);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
 
