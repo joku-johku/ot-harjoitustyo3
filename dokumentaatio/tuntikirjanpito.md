@@ -13,4 +13,5 @@ päivä | aika | mitä tein
 27.11 | 3h | Tein käyttäjätunnuksen kysymisen, mikä toimii nyt oikein. Sekä viikon 5 release ja jarin generointi kunnossa. Testit OK. sekä viikon viisi palautuksen sekvenssikaavio.  
 29.11 | 6h | Käyttäohje, testausdokumentti ja arkkitehtuurikuvaus kuntoon. Sekä tutustuin tietojen tallentamiseen.
 2.12 | 2h | TicTacToeService luokan tekoa ja javadocia.
-yht. | 38h |
+4.12 | 8h | TicTacToeService luokan tekoa, tietojen pysyväistalletusta, javadocia, checstylea ja testausta.
+yht. | 46h |
