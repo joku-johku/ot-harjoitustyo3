@@ -17,6 +17,8 @@ Viikon 4 palautuksessa toimivat ominaisuudet: Peli huomioi tasapelin ja resetoi 
 
 Viikon 5 palautuksessa toimivat ominaisuudet: ohjelma kysyy pelaajien nimiä. Nimen pitää olla vähintään neljä merkkiä pitkä. Jos näin ei ole nimeä kysytään uudelleen. Pelaajien nimet näkyvät nyt myös pistelaskussa ja vuoronannossa. Näiden kahden toiminnallisuuden lisäksi tehty TicTacToeService luokka.
 
+Viikon 6 palautuksessa peli toimii kuten pitääkin. Aloitin PlayerDao ja PointsDao luokkien luomisen, jotta pelaajien nimien ja pisteiden tallentaminen tiedostoihin onnistuu. Testikattavuus hyvä. Lisäsin myös testiluokkia. Samoin loin fakePlayer luokan. Aloitin myös käyttäjätunnuksen luomis näytön koodaamista, mutta en saanut sitä vielä toimimaan kunnolla joten en sitä vielä pushannut.
+
 ### Jatkokehitysideoita
 * Luoda oma käyttäjätunnus, jonka pitää olla uniikki ja vähintään neljä merkkiä pitkä.
 * Käyttäjätunnuksen lisäksi jokaisella käyttäjällä olisi salasana.
