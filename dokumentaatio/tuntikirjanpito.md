@@ -14,4 +14,5 @@ päivä | aika | mitä tein
 29.11 | 6h | Käyttäohje, testausdokumentti ja arkkitehtuurikuvaus kuntoon. Sekä tutustuin tietojen tallentamiseen.
 2.12 | 2h | TicTacToeService luokan tekoa ja javadocia.
 4.12 | 8h | TicTacToeService luokan tekoa, tietojen pysyväistalletusta, javadocia, checstylea ja testausta.
-yht. | 46h |
+10.12 | 4h | Testien tekemistä sekä käyttäjätunnuksen luomista. ReadMe viikon 6 palautusta varten kuntoon.
+yht. | 50h |
