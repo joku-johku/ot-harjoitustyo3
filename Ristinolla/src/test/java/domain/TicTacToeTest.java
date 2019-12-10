@@ -45,21 +45,21 @@ public class TicTacToeTest {
      
       @Test
     public void equalWhenSameId() {
-        TicTacToe t1 = new TicTacToe(10, null, null);
-        TicTacToe t2 = new TicTacToe(10, null, null);
+        Points t1 = new Points(10, null, false, null);
+        Points t2 = new Points(10, null, false, null);
         assertTrue(t1.equals(t2));
     }
   
     @Test
     public void notEqualWhenDifferentId() {
-        TicTacToe t1 = new TicTacToe(10, null, null);
-        TicTacToe t2 = new TicTacToe(2, null, null);
+        Points t1 = new Points(10, null, false, null);
+        Points t2 = new Points(2, null, false, null);
         assertFalse(t1.equals(t2));
     }   
     
     @Test
     public void nonEqualWhenDifferentType() {
-        TicTacToe t = new TicTacToe(10, null, null);
+        Points t = new Points(10, null, false, null);
         Object o = new Object();
         assertFalse(t.equals(o));
     }      

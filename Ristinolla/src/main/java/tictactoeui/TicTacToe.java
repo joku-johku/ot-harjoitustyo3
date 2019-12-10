@@ -1,7 +1,12 @@
 package tictactoeui;
 
 import java.awt.Color;
+import java.io.FileInputStream;
+import java.util.Properties;
 import javax.swing.JOptionPane;
+import dao.FilePointsDao;
+import dao.FilePlayerDao;
+import domain.TicTacToeService;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +26,7 @@ public class TicTacToe extends javax.swing.JFrame {
     private int playerOneCount = 0;
     private int playerTwoCount = 0;
     private String playersTurn = "";
+    private TicTacToeService tictactoeService;
   
   
     public TicTacToe() {
@@ -30,6 +36,19 @@ public class TicTacToe extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         getPlayerOneName();
         getPlayerTwoName();
+    }
+    
+    public void init() throws Exception {
+        Properties properties = new Properties();
+
+        properties.load(new FileInputStream("config.properties"));
+        
+        String playerFile = properties.getProperty("playerFile");
+        String pointsFile = properties.getProperty("pointsFile");
+            
+        FilePlayerDao playerDao = new FilePlayerDao(playerFile);
+        FilePointsDao pointsDao = new FilePointsDao(pointsFile, playerDao);
+        tictactoeService = new TicTacToeService(pointsDao, playerDao);
     }
     
     private void setPlayerName() {
@@ -43,6 +62,8 @@ public class TicTacToe extends javax.swing.JFrame {
             + "   \t" + playersTurn + "'s move  " + playerTwo 
             + "'s Score is: " + String.valueOf(playerTwoCount));
     }
+    
+    
     
     private void setScore() {  
         jLabelscore.setText(playerOne + "'s Score is: " + String.valueOf(playerOneCount) 
@@ -63,6 +84,12 @@ public class TicTacToe extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE);
            getPlayerOneName();
         }
+//         else if (tictactoeService.createPlayer(playerOne, playerOne) ){
+//                JOptionPane.showMessageDialog(this,
+//                "New Player created ",
+//                "Player name",
+//                JOptionPane.INFORMATION_MESSAGE);     
+//            }
     }
     
      private void getPlayerTwoName() {
@@ -130,7 +157,7 @@ public class TicTacToe extends javax.swing.JFrame {
             
         }
     }
-//    
+    
     private void resetGame() {
         jButton1.setText("");
         jButton2.setText("");

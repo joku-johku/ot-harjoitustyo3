@@ -5,20 +5,24 @@
  */
 package dao;
 
-import domain.TicTacToe;
+import domain.Points;
 import java.util.List;
 
 
 /**
- *
- * @author Omistaja
+ * Pisteiden rajapinta 
  */
-public interface TicTacToeDao {
+public interface PointsDao {
     
-    TicTacToe create(TicTacToe todo) throws Exception;
+    Points create(Points points) throws Exception;
 
-    List<TicTacToe> getAll();
+    List<Points> getAll();
 
+    /**
+     *
+     * @param id
+     * @throws Exception
+     */
     void setDone(int id) throws Exception;
     
 }

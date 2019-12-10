@@ -6,8 +6,7 @@
 package domain;
 
 /**
- *
- * @author Omistaja
+ * Yksittäisen pelaajan nimiä kuvaava luokka 
  */
 public class Player {
     private String name;

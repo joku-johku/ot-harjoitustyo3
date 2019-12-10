@@ -6,37 +6,30 @@
 package domain;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import dao.TicTacToeDao;
 import dao.PlayerDao;
-import domain.Player;
-/**
- *
- * @author Omistaja
- */
+import dao.PointsDao;
 
 /**
  * Sovelluslogiikasta vastaava luokka 
  */
 public class TicTacToeService {
     
-    private TicTacToeDao ticTacToeDao;
+    private PointsDao pointsDao;
     private PlayerDao playerDao;
     private Player loggedIn;
     
-    public TicTacToeService(TicTacToeDao ticTacToeDao, PlayerDao playerDao) {
+    public TicTacToeService(PointsDao pointsDao, PlayerDao playerDao) {
         this.playerDao = playerDao;
-        this.ticTacToeDao = ticTacToeDao;
+        this.pointsDao = pointsDao;
     }
     
     /**
-    * sis��nkirjautuminen
+    * sisäänkirjautuminen
     * 
-    * @param   playername   k�ytt�j�tunnus
+    * @param   playername   käyttäjätunnus
     * 
-    * @return true jos k�ytt�j�tunnus on olemassa, muuten false 
+    * @return true jos käyttäjätunnus on olemassa, muuten false 
     */    
     
     public boolean login(String playername) {
@@ -51,6 +44,50 @@ public class TicTacToeService {
     }
     
      /**
+    * Pisteiden lisääminen kirjautuneena olevalle käyttäjälle
+    *
+    * @param   points   pisteiden määrä
+    */
+    
+    public boolean createPoints(String points) {
+        Points todo = new Points(points, loggedIn);
+        try {   
+            pointsDao.create(todo);
+        } catch (Exception ex) {
+            return false;
+        }
+        return true;
+    }
+    
+     /**
+    * kirjautuneena oleva käyttäjä
+    * 
+    * @return kirjautuneena oleva käyttäjä 
+    */   
+    
+    public Player getLoggedUser() {
+        return loggedIn;
+    }
+    
+      /**
+    * kirjautuneen pelaajan pisteet
+    * 
+    * @return kirjautuneen pelaajan pisteet
+    */
+    
+    public List<Points> getPoints() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+          
+        return pointsDao.getAll()
+            .stream()
+            .filter(p-> p.getPlayer().equals(loggedIn))
+            .filter(p->!p.isDone())
+            .collect(Collectors.toList());
+    }
+    
+     /**
     * uloskirjautuminen
     */  
     
@@ -59,15 +96,15 @@ public class TicTacToeService {
     }
     
     /**
-    * uuden k�ytt�j�n luominen
+    * uuden käyttäjän luominen
     * 
-    * @param   playername   k�ytt�j�tunnus
-    * @param   name   k�ytt�j�n nimi
+    * @param   playername   käyttäjätunnus
+    * @param   name   käyttäjän nimi
     * 
-    * @return true jos k�ytt�j�tunnus on luotu onnistuneesti, muuten false 
+    * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false 
     */ 
     
-    public boolean createUser(String playername, String name)  {   
+    public boolean createPlayer(String playername, String name)  {   
         if (playerDao.findByPlayername(playername) != null) {
             return false;
         }
@@ -79,6 +116,37 @@ public class TicTacToeService {
         }
 
         return true;
+    }
+    
+      /**
+    * kirjautuneen käyttäjän tarkastattomat pisteet
+    * 
+    * @return kirjautuneen käyttäjän tarkastattomat pisteet
+    */
+    
+    public List<Points> getUndone() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+          
+        return pointsDao.getAll()
+            .stream()
+            .filter(t-> t.getPlayer().equals(loggedIn))
+            .filter(t->!t.isDone())
+            .collect(Collectors.toList());
+    }
+    
+       /**
+    * pisteiden merkitseminen tarkastetuksi
+    * 
+    * @param   id   tarkastettavaksi merkittävän pisteen tunniste
+    */    
+    
+    public void markDone(int id) {
+        try {
+            pointsDao.setDone(id);
+        } catch (Exception ex) {
+        }
     }
     
 }

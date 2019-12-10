@@ -12,8 +12,7 @@ import tictactoeui.TicTacToe;
  */
 
 /**
- *
- * @author Omistaja
+ * Sovelluksen pääluokka 
  */
 public class Main {
     public static void main(String[] args) {

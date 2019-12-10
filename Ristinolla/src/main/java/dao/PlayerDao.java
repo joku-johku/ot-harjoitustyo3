@@ -9,8 +9,7 @@ import domain.Player;
 import java.util.List;
 
 /**
- *
- * @author Omistaja
+ * Pelaajan rajapinta
  */
 public interface PlayerDao {
     
