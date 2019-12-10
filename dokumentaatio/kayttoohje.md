@@ -14,27 +14,19 @@ tallettavien tiedostojen nimet. Tiedoston muoto on seuraava
 
 Ohjelma käynnistetään komennolla  
 
-`<java -jar tictactoe.jar>`  
+`<java -jar Ristinolla-1.0-SNAPSHOT.jar>`  
 
 ## Kirjautuminen  
 
 Sovellus käynnistyy kirjautumisnäkymään:  
 
+![pelaajannimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.png)
 
-Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus syötekenttään ja painamalla ok.  
-
-## Uuden käyttäjän luominen  
-
-Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkymään panikkeella create new user.  
-
-Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla create  
-
-Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.  
+Pelaamisen aloittaminen onnistuu kirjoittamalla käyttäjätunnus syötekenttään ja painamalla ok. 
 
 Tämän jälkeen pelaaminen aloitetaan, siten että kumpikin pelaaja syöttää käyttäjätunnuksensa.  
-Käyttäjätunnus pitää olla vähintään neljä merkkiä pitkä.  
+Käyttäjätunnus pitää olla vähintään neljä merkkiä pitkä. 
 
-![pelaajannimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.png)
 
 ## Ristinollan pelaaminen  
 
