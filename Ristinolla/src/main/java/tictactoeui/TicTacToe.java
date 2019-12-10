@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.io.FileInputStream;
 import java.util.Properties;
 import javax.swing.JOptionPane;
-import dao.FilePointsDao;
 import dao.FilePlayerDao;
 import domain.TicTacToeService;
 
@@ -47,8 +46,7 @@ public class TicTacToe extends javax.swing.JFrame {
         String pointsFile = properties.getProperty("pointsFile");
             
         FilePlayerDao playerDao = new FilePlayerDao(playerFile);
-        FilePointsDao pointsDao = new FilePointsDao(pointsFile, playerDao);
-        tictactoeService = new TicTacToeService(pointsDao, playerDao);
+      
     }
     
     private void setPlayerName() {
