@@ -15,4 +15,5 @@ päivä | aika | mitä tein
 2.12 | 2h | TicTacToeService luokan tekoa ja javadocia.
 4.12 | 8h | TicTacToeService luokan tekoa, tietojen pysyväistalletusta, javadocia, checstylea ja testausta.
 10.12 | 4h | Testien tekemistä sekä käyttäjätunnuksen luomista. ReadMe viikon 6 palautusta varten kuntoon.
-yht. | 50h |
+11.12 | 7h | JavaDocia ja sovelluslogiikan eriyttämistä käyttöliittymästä. Päätin tehdä ristinolla ruudukon täysin eritavalla.
+yht. | 57h |
