@@ -9,8 +9,8 @@ package tictactoe.tictactoe.ui;
  *
  * @author Omistaja
  */
-import tictactoe.tictactoe.domain.TiedostonKasittelija;
-import tictactoe.tictactoe.domain.Logiikka;
+import tictactoe.tictactoe.domain.FileHandler;
+import tictactoe.tictactoe.domain.Logics;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -29,20 +29,20 @@ import javax.swing.JTextField;
  */
 public class Results extends JFrame {
     private JFrame frame;
-    private TiedostonKasittelija tiedostonKasittelija;
+    private FileHandler fileHandler;
 
     
     /** Alustaa oliomuuttujat ja avaa uuden ikkunan tuloksille.
      * @param logiikka Pelin logiikka
      */
-    public Results(Logiikka logiikka) {
-        this.tiedostonKasittelija = logiikka.getTiedostonKasittelija();
-        this.frame = new JFrame("Tulokset");
+    public Results(Logics logics) {
+        this.fileHandler = logics.getFileHandler();
+        this.frame = new JFrame("Results");
         this.frame.setPreferredSize(new Dimension(340, 340));
         this.frame.setResizable(false);
         this.frame.pack();
         try {
-            this.luoKomponentit(frame.getContentPane());
+            this.createComponents(frame.getContentPane());
         } catch (Exception ex) {
             Logger.getLogger(Results.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -52,71 +52,71 @@ public class Results extends JFrame {
     /** Luo tulos-ikkunan komponentit, niiden kuuntelijat ja lisää ne containeriin.
      * @param container Container, johon komponentit asetetaan.
      */
-    private void luoKomponentit(Container container) throws Exception {
+    private void createComponents(Container container) throws Exception {
         container.setLayout(new GridLayout(3, 1));
         
-        final JTextField tekstiKentta = new JTextField("Risti " + tiedostonKasittelija.lueRistinPisteet() + " - " + tiedostonKasittelija.lueNollanPisteet() + " Nolla");
-        final JTextArea tekstiAlue = new JTextArea();
-        final JScrollPane scrollattava = new JScrollPane(tekstiAlue);
+        final JTextField textField = new JTextField("Risti " + fileHandler.readCrossPoints()+ " - " + fileHandler.readZeroPoints()+ " Nolla");
+        final JTextArea textArea = new JTextArea();
+        final JScrollPane scroll = new JScrollPane(textArea);
         
-        tekstiKentta.setEditable(false);
-        tekstiAlue.setEditable(false);
+        textField.setEditable(false);
+        textArea.setEditable(false);
         
-        String aikaisemmatPelit = "";
+        String earlierGames = "";
         try {
-            aikaisemmatPelit = tiedostonKasittelija.lueVoitot();
+            earlierGames = fileHandler.readWins();
         } catch (Exception ex) {
             Logger.getLogger(Results.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tekstiAlue.setText(aikaisemmatPelit);
+        textArea.setText(earlierGames);
         
-        container.add(tekstiKentta);
-        container.add(scrollattava);
-        container.add(luoNapit(tekstiKentta, tekstiAlue));
+        container.add(textField);
+        container.add(scroll);
+        container.add(createButtons(textField, textArea));
     }
     
     /** Luo napit tulos ikkunan napit. Napit on 1 rivin ja 2 sarakkeen GridLayoutissa.
-     * @param tekstiKentta Tekstikenttä, jota nollaa-napin kuuntelija tarvitsee.
-     * @param tekstiAlue Tekstialue, jota nollaa-napin kuuntelija tarvitsee.
+     * @param textField Tekstikenttä, jota nollaa-napin kuuntelija tarvitsee.
+     * @param textArea Tekstialue, jota nollaa-napin kuuntelija tarvitsee.
      * @return Palauttaa panelin, joka lisätään luoKomponentit-metodissa containeriin.
      */
-    private JPanel luoNapit(JTextField tekstiKentta, JTextArea tekstiAlue) {
-        JPanel panel = new JPanel(new GridLayout(1,2));
-        JButton nollaa = new JButton("Nollaa");
-        luoNollaaKuuntelija(nollaa, tekstiKentta, tekstiAlue);
+    private JPanel createButtons(JTextField textField, JTextArea textArea) {
+        JPanel panel = new JPanel(new GridLayout(1, 2));
+        JButton reset = new JButton("Reset");
+        createResetListener(reset, textField, textArea);
         
-        JButton sulje = new JButton("Sulje");
-        sulje.addActionListener(new ActionListener() {
+        JButton close = new JButton("Close");
+        close.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               frame.dispose();
+                frame.dispose();
             } 
         });
         
-        panel.add(nollaa);
-        panel.add(sulje);
+        panel.add(reset);
+        panel.add(close);
         
         return panel;
     }
     
     /** Luo kuuntelijan nollaa-napille. Ristin ja nollan pisteet nollataan ja viimeksi pelatut pelit poistetaan.
-     * @param nollaa Painike, jolle kuuntelija tehdään.
-     * @param tekstiKentta Tekstikenttä, jossa näkyy ristin ja nollan pisteet.
-     * @param tekstiAlue Tekstialue, jossa näkyy viime pelien voitot.
+     * @param reset Painike, jolle kuuntelija tehdään.
+     * @param textField Tekstikenttä, jossa näkyy ristin ja nollan pisteet.
+     * @param textArea Tekstialue, jossa näkyy viime pelien voitot.
      */
-    private void luoNollaaKuuntelija(JButton nollaa, final JTextField tekstiKentta, final JTextArea tekstiAlue) {
-        nollaa.addActionListener(new ActionListener() {
+    private void createResetListener(JButton reset, final JTextField textField, final JTextArea textArea) {
+        reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    tiedostonKasittelija.kirjoitaPisteisiin("0:0");
-                    tiedostonKasittelija.nollaaViimeisetVoitot();
-                    tekstiKentta.setText("Risti " + tiedostonKasittelija.lueRistinPisteet() + " - " + tiedostonKasittelija.lueNollanPisteet() + " Nolla");
+                    fileHandler.writeIntoPoints("0:0");
+                    fileHandler.resetLatestWins();
+                    textField.setText("Cross " + fileHandler.readCrossPoints()+ " - " + fileHandler.readZeroPoints()+ " Zero");
                 } catch (Exception ex) {
                     Logger.getLogger(Results.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                tekstiAlue.setText("");
+                textArea.setText("");
             }
         });
     }

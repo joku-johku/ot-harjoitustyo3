@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tictactoe.tictactoe.domain.Logiikka;
+import tictactoe.tictactoe.domain.Logics;
 
 /**
  *
@@ -18,7 +18,7 @@ import tictactoe.tictactoe.domain.Logiikka;
  */
 public class LogicsTest {
     
-    Logiikka logiikka;
+    Logics logics;
     
     public LogicsTest() {
     }
@@ -34,7 +34,7 @@ public class LogicsTest {
     
     @Before
     public void setUp() {
-        logiikka = new Logiikka();
+        logics = new Logics();
     }
     
     @After
@@ -49,7 +49,7 @@ public class LogicsTest {
       // Testaa konstruktorin luoman pöydän alkioiden sisällön, sekä muut sen luomat muuttujat.
     @Test
     public void konstruktorinLuomatMuuttujat() {
-        int poyta[][] = logiikka.getPoyta();
+        int poyta[][] = logics.getBoard();
         
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -57,52 +57,52 @@ public class LogicsTest {
             }
         }
         
-        assertEquals(0, logiikka.getPelinTila());
-        assertEquals(0, logiikka.getVuoro());
-        assertEquals(1, logiikka.getRistinAsetus());
-        assertEquals(1, logiikka.getNollanAsetus());
+        assertEquals(0, logics.getGamesState());
+        assertEquals(0, logics.getWhoseTurn());
+        assertEquals(1, logics.getCrossDrawed());
+        assertEquals(1, logics.getZeroDrawed());
     }
     
     // Testaa setPelinTila-metodin.
     @Test
     public void setPelinTila() {
-        assertEquals(0, logiikka.getPelinTila());
-        logiikka.setPelinTila(1);
-        assertEquals(1, logiikka.getPelinTila());
+        assertEquals(0, logics.getGamesState());
+        logics.setGamesState(1);
+        assertEquals(1, logics.getGamesState());
     }
     
     // Testaa setRistinAsetus-metodin.
     @Test
     public void setRistinAsetus() {
-        assertEquals(1, logiikka.getRistinAsetus());
-        logiikka.setRistinAsetus(2);
-        assertEquals(2, logiikka.getRistinAsetus());
+        assertEquals(1, logics.getCrossDrawed());
+        logics.setCrossDrawed(2);
+        assertEquals(2, logics.getCrossDrawed());
     }
     
     // Testaa setNollanAsetus-metodin.
     @Test
     public void setNollanAsetus() {
-        assertEquals(1, logiikka.getNollanAsetus());
-        logiikka.setNollanAsetus(2);
-        assertEquals(2, logiikka.getNollanAsetus());
+        assertEquals(1, logics.getZeroDrawed());
+        logics.setZeroDrawed(2);
+        assertEquals(2, logics.getZeroDrawed());
     }
     
     // Testaa täyden pöydän nollauksen.
     @Test
     public void nollaus() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 0, 1);
-        logiikka.suoritaVuoro(2, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 0);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 1, 2);
-        logiikka.suoritaVuoro(1, 2, 0);
-        logiikka.suoritaVuoro(2, 2, 1);
-        logiikka.suoritaVuoro(2, 2, 2);
-        int poyta[][] = logiikka.getPoyta();
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 0, 1);
+        logics.playTurn(2, 0, 2);
+        logics.playTurn(2, 1, 0);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 1, 2);
+        logics.playTurn(1, 2, 0);
+        logics.playTurn(2, 2, 1);
+        logics.playTurn(2, 2, 2);
+        int poyta[][] = logics.getBoard();
         
-        logiikka.nollaa();
+        logics.reset();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 assertEquals(0, poyta[i][j]);
@@ -113,33 +113,33 @@ public class LogicsTest {
     // Testaa metodin onkoPoytaTaynna.
     @Test
     public void taynnaOlevaPoyta() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 0, 1);
-        logiikka.suoritaVuoro(2, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 0);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 1, 2);
-        logiikka.suoritaVuoro(1, 2, 0);
-        logiikka.suoritaVuoro(2, 2, 1);
-        logiikka.suoritaVuoro(2, 2, 2);
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 0, 1);
+        logics.playTurn(2, 0, 2);
+        logics.playTurn(2, 1, 0);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 1, 2);
+        logics.playTurn(1, 2, 0);
+        logics.playTurn(2, 2, 1);
+        logics.playTurn(2, 2, 2);
         
-        assertTrue(logiikka.onkoPoytaTaynna());
+        assertTrue(logics.isBoardFull());
     }
     
     // Testaa onkoPoytaTaynna false.
     @Test
     public void eiTaynnaOlevaPoyta() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 0, 1);
-        logiikka.suoritaVuoro(2, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 0);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 1, 2);
-        logiikka.suoritaVuoro(1, 2, 0);
-        logiikka.suoritaVuoro(2, 2, 1);
-        assertFalse(logiikka.onkoPoytaTaynna());
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 0, 1);
+        logics.playTurn(2, 0, 2);
+        logics.playTurn(2, 1, 0);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 1, 2);
+        logics.playTurn(1, 2, 0);
+        logics.playTurn(2, 2, 1);
+        assertFalse(logics.isBoardFull());
     }
     
     /* Testaa xxx
@@ -147,11 +147,11 @@ public class LogicsTest {
      *        ... */
     @Test
     public void ylaRiviX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 0, 1);
-        logiikka.suoritaVuoro(1, 0, 2);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 0, 1);
+        logics.playTurn(1, 0, 2);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa ooo
@@ -159,11 +159,11 @@ public class LogicsTest {
      *        ... */
     @Test
     public void ylaRiviO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 0);
-        logiikka.suoritaVuoro(2, 0, 1);
-        logiikka.suoritaVuoro(2, 0, 2);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 0);
+        logics.playTurn(2, 0, 1);
+        logics.playTurn(2, 0, 2);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa ...
@@ -171,11 +171,11 @@ public class LogicsTest {
      *        ... */
     @Test
     public void keskiRiviX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 1, 0);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 1, 2);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 1, 0);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 1, 2);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa ...
@@ -183,11 +183,11 @@ public class LogicsTest {
      *        ... */
     @Test
     public void keskiRiviO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 1, 0);
-        logiikka.suoritaVuoro(2, 1, 1);
-        logiikka.suoritaVuoro(2, 1, 2);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 1, 0);
+        logics.playTurn(2, 1, 1);
+        logics.playTurn(2, 1, 2);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa ...
@@ -195,11 +195,11 @@ public class LogicsTest {
      *        xxx */
     @Test
     public void alaRiviX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 2, 0);
-        logiikka.suoritaVuoro(1, 2, 1);
-        logiikka.suoritaVuoro(1, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 2, 0);
+        logics.playTurn(1, 2, 1);
+        logics.playTurn(1, 2, 2);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa ...
@@ -207,11 +207,11 @@ public class LogicsTest {
      *        ooo */
     @Test
     public void alaRiviO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 2, 0);
-        logiikka.suoritaVuoro(2, 2, 1);
-        logiikka.suoritaVuoro(2, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 2, 0);
+        logics.playTurn(2, 2, 1);
+        logics.playTurn(2, 2, 2);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa x..
@@ -219,11 +219,11 @@ public class LogicsTest {
      *        x.. */
     @Test
     public void vasenSarakeX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 1, 0);
-        logiikka.suoritaVuoro(1, 2, 0);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 1, 0);
+        logics.playTurn(1, 2, 0);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa o..
@@ -231,11 +231,11 @@ public class LogicsTest {
      *        o.. */
     @Test
     public void vasenSarakeO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 0);
-        logiikka.suoritaVuoro(2, 1, 0);
-        logiikka.suoritaVuoro(2, 2, 0);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 0);
+        logics.playTurn(2, 1, 0);
+        logics.playTurn(2, 2, 0);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa .x.
@@ -243,11 +243,11 @@ public class LogicsTest {
      *        .x. */
     @Test
     public void keskiSarakeX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 1);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 2, 1);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 1);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 2, 1);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa .o.
@@ -255,11 +255,11 @@ public class LogicsTest {
      *        .o. */
     @Test
     public void keskiSarakeO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 1);
-        logiikka.suoritaVuoro(2, 1, 1);
-        logiikka.suoritaVuoro(2, 2, 1);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 1);
+        logics.playTurn(2, 1, 1);
+        logics.playTurn(2, 2, 1);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa ..x
@@ -267,23 +267,24 @@ public class LogicsTest {
      *        ..x */
     @Test
     public void oikeaSarakeX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 2);
-        logiikka.suoritaVuoro(1, 1, 2);
-        logiikka.suoritaVuoro(1, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 2);
+        logics.playTurn(1, 1, 2);
+        logics.playTurn(1, 2, 2);
+        assertTrue(logics.checkWin(1));
+  
     }
-    
     /* Testaa ..o
      *        ..o
      *        ..o */
+    
     @Test
     public void oikeaSarakeO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 2);
-        logiikka.suoritaVuoro(2, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 2);
+        logics.playTurn(2, 1, 2);
+        logics.playTurn(2, 2, 2);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa x..
@@ -291,11 +292,11 @@ public class LogicsTest {
      *        ..x */
     @Test
     public void viistoVasemmaltaOikealleX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 0);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 0);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 2, 2);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa o..
@@ -303,11 +304,11 @@ public class LogicsTest {
      *        ..o */
     @Test
     public void viistoVasemmaltaOikealleO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 0);
-        logiikka.suoritaVuoro(2, 1, 1);
-        logiikka.suoritaVuoro(2, 2, 2);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 0);
+        logics.playTurn(2, 1, 1);
+        logics.playTurn(2, 2, 2);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa ..x
@@ -315,11 +316,11 @@ public class LogicsTest {
      *        x.. */
     @Test
     public void viistoOikealtaVasemmalleX() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 2);
-        logiikka.suoritaVuoro(1, 1, 1);
-        logiikka.suoritaVuoro(1, 2, 0);
-        assertTrue(logiikka.tarkistaVoitto(1));
+        logics.startGame();
+        logics.playTurn(1, 0, 2);
+        logics.playTurn(1, 1, 1);
+        logics.playTurn(1, 2, 0);
+        assertTrue(logics.checkWin(1));
     }
     
     /* Testaa ..o
@@ -327,11 +328,11 @@ public class LogicsTest {
      *        o.. */
     @Test
     public void viistoOikealtaVasemmalleO() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(2, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 1);
-        logiikka.suoritaVuoro(2, 2, 0);
-        assertTrue(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(2, 0, 2);
+        logics.playTurn(2, 1, 1);
+        logics.playTurn(2, 2, 0);
+        assertTrue(logics.checkWin(2));
     }
     
     /* Testaa ..x
@@ -339,10 +340,10 @@ public class LogicsTest {
      *        o..*/
     @Test
     public void viistoFalse() {
-        logiikka.aloitaPeli();
-        logiikka.suoritaVuoro(1, 0, 2);
-        logiikka.suoritaVuoro(2, 1, 1);
-        logiikka.suoritaVuoro(2, 2, 0);
-        assertFalse(logiikka.tarkistaVoitto(2));
+        logics.startGame();
+        logics.playTurn(1, 0, 2);
+        logics.playTurn(2, 1, 1);
+        logics.playTurn(2, 2, 0);
+        assertFalse(logics.checkWin(2));
     }
 }

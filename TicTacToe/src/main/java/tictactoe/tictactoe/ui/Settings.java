@@ -19,103 +19,103 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import tictactoe.tictactoe.domain.Logiikka;
+import tictactoe.tictactoe.domain.Logics;
 
 /** Ikkuna asetuksien muuttamiseen. 
  */
 public class Settings extends JFrame {
     private JFrame frame;
-    private Logiikka logiikka;
+    private Logics logics;
     
     /** Alustaa oliomuuttujat ja tekee uuden ikkunan asetuksille.
      * @param logiikka Pelin logiikka
      */
-    public Settings(Logiikka logiikka) {
-        this.logiikka = logiikka;
-        this.frame = new JFrame("Asetukset");
+    public Settings(Logics logics) {
+        this.logics = logics;
+        this.frame = new JFrame("Settings");
         this.frame.setPreferredSize(new Dimension(300, 300));
         this.frame.setResizable(false);
         this.frame.pack();
-        this.luoKomponentit(frame.getContentPane());
+        this.createComponents(frame.getContentPane());
         this.frame.setVisible(true);
     }
     
     /** Luo ikkunan komponentit, tekee niille kuuntelijat ja lisää ne containeriin.
      * @param container Container, johon komponentit lisätään.
      */
-    private void luoKomponentit(Container container) {
+    private void createComponents(Container container) {
         container.setLayout(new GridLayout(7, 1));
         
-        JLabel valitseRisti = new JLabel("Valitse ristin kuvio");
-        JLabel valitseNolla = new JLabel("Valitse nollan kuvio");
+        JLabel pickCross = new JLabel("Pick a cross");
+        JLabel pickZero = new JLabel("Pick a zero");
         
-        ButtonGroup ristinRyhma = new ButtonGroup();
-        ButtonGroup nollanRyhma = new ButtonGroup();
+        ButtonGroup crossGroup = new ButtonGroup();
+        ButtonGroup zeroGroup = new ButtonGroup();
         
-        JRadioButton risti1 = new JRadioButton("Normaali risti");
-        JRadioButton risti2 = new JRadioButton("Latinalainen risti");
-        JRadioButton nolla1 = new JRadioButton("Normaali nolla");
-        JRadioButton nolla2 = new JRadioButton("Hymynaama");
+        JRadioButton cross1 = new JRadioButton("Normal cross");
+        JRadioButton cross2 = new JRadioButton("Latin cross");
+        JRadioButton zero1 = new JRadioButton("Normal zero");
+        JRadioButton zero2 = new JRadioButton("Smiley");
         
-        ristinRyhma.add(risti1);
-        ristinRyhma.add(risti2);
+        crossGroup.add(cross1);
+        crossGroup.add(cross2);
         
-        nollanRyhma.add(nolla1);
-        nollanRyhma.add(nolla2);
+        zeroGroup.add(zero1);
+        zeroGroup.add(zero2);
         
-        JButton sulje = new JButton("Sulje");
+        JButton close = new JButton("Close");
         
-        this.teeKuuntelijat(risti1, risti2, nolla1, nolla2, sulje);
+        this.teeKuuntelijat(cross1, cross2, zero1, zero2, close);
         
-        container.add(valitseRisti);
-        container.add(risti1);
-        container.add(risti2);
-        container.add(valitseNolla);
-        container.add(nolla1);
-        container.add(nolla2);
-        container.add(sulje);
+        container.add(pickCross);
+        container.add(cross1);
+        container.add(cross2);
+        container.add(pickZero);
+        container.add(zero1);
+        container.add(zero2);
+        container.add(close);
     }
     
     /** Tekee komponenteille kuuntelijat.
-     * @param risti1 Ensimmäinen asetus ristille.
-     * @param risti2 Toinen asetus ristille.
-     * @param nolla1 Ensimmäinen asetus nollalle.
-     * @param nolla2 Toinen asetus nollalle.
-     * @param sulje Nappi ikkunan sulkemiselle.
+     * @param cross1 Ensimmäinen asetus ristille.
+     * @param cross2 Toinen asetus ristille.
+     * @param zero1 Ensimmäinen asetus nollalle.
+     * @param zero2 Toinen asetus nollalle.
+     * @param close Nappi ikkunan sulkemiselle.
      */
-    private void teeKuuntelijat(JRadioButton risti1, JRadioButton risti2, JRadioButton nolla1, JRadioButton nolla2, JButton sulje) {
-        risti1.addActionListener(new ActionListener() {
+    private void teeKuuntelijat(JRadioButton cross1, JRadioButton cross2, JRadioButton zero1, JRadioButton zero2, JButton close) {
+        cross1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                logiikka.setRistinAsetus(1);
+                logics.setCrossDrawed(1);
             }    
         });
         
-        risti2.addActionListener(new ActionListener() {
+        cross2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                logiikka.setRistinAsetus(2);
+                logics.setCrossDrawed(2);
             }    
         });
         
-        nolla1.addActionListener(new ActionListener() {
+        zero1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                logiikka.setNollanAsetus(1);
+                logics.setZeroDrawed(1);
             }    
         });
         
-        nolla2.addActionListener(new ActionListener() {
+        zero2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                logiikka.setNollanAsetus(2);
+                logics.setZeroDrawed(2);
             }    
         });
         
-        sulje.addActionListener(new ActionListener() {
+        close.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               frame.dispose();
+                frame.dispose();
             } 
         });
     }

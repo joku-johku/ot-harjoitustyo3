@@ -1,4 +1,4 @@
 /**
- * Sovelluslogiikka 
+ * Sovelluslogiikka.
  */
 package tictactoe.tictactoe.domain;

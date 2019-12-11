@@ -5,25 +5,22 @@
  */
 package tictactoe.tictactoe.ui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import tictactoe.tictactoe.domain.Logics;
+
 /**
  *
  * @author Omistaja
  */
-import tictactoe.tictactoe.ui.Results;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import tictactoe.tictactoe.domain.Logiikka;
-
-/** ActionListener käyttöliittymän Tulokset-napille.
- */
-public class TuloksetKuuntelija implements ActionListener {
-    private Logiikka logiikka;
+public class PlayersListener implements ActionListener {
+     private Logics logics;
     
     /** Alustaa logiikka-muuttujan.
-     * @param logiikka Pelin logiikka
+     * @param logics Pelin logiikka
      */
-    public TuloksetKuuntelija(Logiikka logiikka) {
-        this.logiikka = logiikka;
+    public PlayersListener(Logics logics) {
+        this.logics = logics;
     }
     
     /** Luo uuden ikkunan tuloksille.
@@ -31,6 +28,6 @@ public class TuloksetKuuntelija implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        Results tulokset = new Results(this.logiikka);
+        Players players = new Players(this.logics);
     }
 }

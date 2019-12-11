@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 
 /** Alue mihin peliä pelataan. Piirtää luodessa ruudukun, ja pelattaessa ristit ja nollat.
  */
-public class Piirtoalusta extends JPanel {
+public class DrawCanvas extends JPanel {
     
     /** Asettaa alustan taustan väriksi valkoisen.
      */
-    public Piirtoalusta() {
+    public DrawCanvas() {
         super.setBackground(Color.WHITE);
     }
     
@@ -45,7 +45,7 @@ public class Piirtoalusta extends JPanel {
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
      */
-    public void piirraNormaaliRisti(int x, int y) {
+    public void drawNormalCross(int x, int y) {
         Graphics graphics = this.getGraphics();
         graphics.setColor(Color.BLUE);
         graphics.drawLine(x, y, x + 50, y + 50);
@@ -57,7 +57,7 @@ public class Piirtoalusta extends JPanel {
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
      */
-    public void piirraLatinalainenRisti(int x, int y) {
+    public void drawLatinCross(int x, int y) {
         Graphics graphics = this.getGraphics();
         graphics.setColor(Color.BLUE);
         graphics.drawLine(x, y + 10, x + 50, y + 10);
@@ -69,7 +69,7 @@ public class Piirtoalusta extends JPanel {
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
      */
-    public void piirraNormaaliNolla(int x, int y) {
+    public void drawNormalZero(int x, int y) {
         Graphics graphics = this.getGraphics();
         graphics.setColor(Color.RED);
         graphics.drawOval(x - 12, y - 12, 75, 75);
@@ -80,7 +80,7 @@ public class Piirtoalusta extends JPanel {
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
      */
-    public void piirraHymynaama(int x, int y) {
+    public void drawSmiley(int x, int y) {
         Graphics graphics = this.getGraphics();
         graphics.setColor(Color.RED);
         // Piirtää pään.

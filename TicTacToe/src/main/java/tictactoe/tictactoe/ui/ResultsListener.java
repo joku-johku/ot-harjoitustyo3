@@ -5,29 +5,32 @@
  */
 package tictactoe.tictactoe.ui;
 
-import tictactoe.tictactoe.ui.Settings;
+/**
+ *
+ * @author Omistaja
+ */
+import tictactoe.tictactoe.ui.Results;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import tictactoe.tictactoe.domain.Logics;
 
-/** ActionListener käyttöliittymän Asetukset-napille.
+/** ActionListener käyttöliittymän Tulokset-napille.
  */
-public class SettingsListener implements ActionListener {
+public class ResultsListener implements ActionListener {
     private Logics logics;
-
     
     /** Alustaa logiikka-muuttujan.
-     * @param logics 
+     * @param logics Pelin logiikka
      */
-    public SettingsListener(Logics logics) {
+    public ResultsListener(Logics logics) {
         this.logics = logics;
     }
     
-    /** Luo uuden ikkunan asetuksille.
+    /** Luo uuden ikkunan tuloksille.
      * @param e 
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        Settings settings = new Settings(this.logics);
+        Results results = new Results(this.logics);
     }
 }
