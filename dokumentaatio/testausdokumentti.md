@@ -23,7 +23,7 @@ Molempien DAO-luokkien toiminnallisuus on testattu luomalla testeissä tilapäin
 
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 60% ja haarautumakattavuus 100 %.  
 
-![testikattavuus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/testikattavuus.PNG)
+![testikattavuus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/oikea_testikattavuus.PNG)
 
 Testaamatta jäivät tilanteet, joissa käyttäjät tai pisteet tallettavia tiedostoja ei ole, tai niihin ei ole luku- ja kirjoitusoikeutta.  
 
