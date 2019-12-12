@@ -22,6 +22,7 @@ public class DrawCanvasListener implements MouseListener {
     private DrawCanvas canvas;
     private int[][] board;
     private JTextField textField;
+
     
     /** Alustaa oliomuuttujat.
      * @param logics Pelin logiikka
@@ -35,8 +36,8 @@ public class DrawCanvasListener implements MouseListener {
         this.textField = textField;
     }
     
-    /**  Sekavannäköinen metodi, joka tarkistaa mihin kohtaan piirtoalustaa pelaaja klikkaa,
-     *   ja suorittaasen mukaan vuoron tiettyyn ruutuun.
+    /**  Metodi, joka tarkistaa mihin kohtaan piirtoalustaa pelaaja klikkaa,
+     *   ja suorittaa sen mukaan vuoron tiettyyn ruutuun.
      * @param e 
      */
     @Override
@@ -83,7 +84,7 @@ public class DrawCanvasListener implements MouseListener {
             hasGameEnded();
         } else {
             this.logics.playTurn(2, row, col);
-            if (this.logics.getZeroDrawed()== 1) {
+            if (this.logics.getZeroDrawed() == 1) {
                 this.canvas.drawNormalZero(x, y);
             } else {
                 this.canvas.drawSmiley(x, y);
@@ -97,10 +98,10 @@ public class DrawCanvasListener implements MouseListener {
      */
     public void hasGameEnded() {
         if (this.logics.checkWin(1)) {
-            this.textField.setText("Cross is winner");
+            this.textField.setText(logics.getPlayerOne() + " is winner");
             this.logics.setGamesState(0);
         } else if (this.logics.checkWin(2)) {
-            this.textField.setText("Zero is winner!");
+            this.textField.setText(logics.getPlayerTwo() + " is winner!");
             this.logics.setGamesState(0);
         } else if (this.logics.isBoardFull()) {
             this.textField.setText("It's a tie!");

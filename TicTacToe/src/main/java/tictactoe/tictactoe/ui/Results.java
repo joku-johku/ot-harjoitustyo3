@@ -9,8 +9,6 @@ package tictactoe.tictactoe.ui;
  *
  * @author Omistaja
  */
-import tictactoe.tictactoe.domain.FileHandler;
-import tictactoe.tictactoe.domain.Logics;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -24,22 +22,24 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import tictactoe.tictactoe.domain.*;
 
 /** Ikkuna tulosten tarkastelemiseen, sekä nollaamiseen.
  */
 public class Results extends JFrame {
     private JFrame frame;
     private FileHandler fileHandler;
+    private Logics logics;
 
     
     /** Alustaa oliomuuttujat ja avaa uuden ikkunan tuloksille.
-     * @param logiikka Pelin logiikka
+     * @param logics Pelin logiikka
      */
     public Results(Logics logics) {
         this.fileHandler = logics.getFileHandler();
         this.frame = new JFrame("Results");
         this.frame.setPreferredSize(new Dimension(340, 340));
-        this.frame.setResizable(false);
+        this.frame.setResizable(true);
         this.frame.pack();
         try {
             this.createComponents(frame.getContentPane());
@@ -55,7 +55,8 @@ public class Results extends JFrame {
     private void createComponents(Container container) throws Exception {
         container.setLayout(new GridLayout(3, 1));
         
-        final JTextField textField = new JTextField("Risti " + fileHandler.readCrossPoints()+ " - " + fileHandler.readZeroPoints()+ " Nolla");
+        final JTextField textField = new JTextField("Cross " + fileHandler.readCrossPoints() + " - " 
+                + fileHandler.readZeroPoints() + " Zero");
         final JTextArea textArea = new JTextArea();
         final JScrollPane scroll = new JScrollPane(textArea);
         
@@ -92,7 +93,6 @@ public class Results extends JFrame {
                 frame.dispose();
             } 
         });
-        
         panel.add(reset);
         panel.add(close);
         
@@ -111,7 +111,8 @@ public class Results extends JFrame {
                 try {
                     fileHandler.writeIntoPoints("0:0");
                     fileHandler.resetLatestWins();
-                    textField.setText("Cross " + fileHandler.readCrossPoints()+ " - " + fileHandler.readZeroPoints()+ " Zero");
+                    textField.setText("Cross " + fileHandler.readCrossPoints() + " - " + fileHandler.readZeroPoints() +
+                            " Zero");
                 } catch (Exception ex) {
                     Logger.getLogger(Results.class.getName()).log(Level.SEVERE, null, ex);
                 }

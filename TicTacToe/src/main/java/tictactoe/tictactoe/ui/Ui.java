@@ -18,8 +18,10 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javafx.scene.control.TextField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -32,6 +34,8 @@ import tictactoe.tictactoe.domain.Logics;
 public class Ui implements Runnable {
     private JFrame frame;
     private Logics logics;
+    Logics pointscross;
+    Logics pointzero;
     
     /** Alustaa logiikka-muuttujan.
      */
@@ -40,14 +44,16 @@ public class Ui implements Runnable {
          
     }
     
+    
+    
     @Override
     public void run() {
         frame = new JFrame("TicTacToe");
-        frame.setPreferredSize(new Dimension(620, 340));
+        frame.setPreferredSize(new Dimension(700, 500));
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         createComponents(frame.getContentPane());
-       
+        frame.setLocationRelativeTo(null);
         frame.pack();
         frame.setVisible(true);
     }
@@ -58,31 +64,32 @@ public class Ui implements Runnable {
     public void createComponents(Container container) {
         container.setLayout(new GridLayout(1, 2));
         
-        JTextField TextField = new JTextField("Welcome!");
-        TextField.setEditable(false);
+        JTextField textField = new JTextField("Welcome!");
+       
+        textField.setEditable(false);
         DrawCanvas canvas = new DrawCanvas();
-        canvas.addMouseListener(new DrawCanvasListener(this.logics, canvas, TextField));
+        canvas.addMouseListener(new DrawCanvasListener(this.logics, canvas, textField));
         
         container.add(canvas);
-        container.add(createMenu(TextField, canvas));
+        container.add(createMenu(textField, canvas));
     }
     
     /**  
      * Luo oikean puolen käyttöliittymästä. Menu sisältää tekstikentän, sekä napit uudelle pelille ja
      *   pelin lopettamiselle. Tätä metodia kutsutaan luoKomponentit-metodissa. 
-     * @param TextField Käyttöliittymän tekstikenttä
+     * @param textField Käyttöliittymän tekstikenttä
      * @param canvas DrawCanvas täytyy antaa uuden pelin kuuntelijalle
      * @return Palauttaa panelin
      */
-    public JPanel createMenu(JTextField TextField, DrawCanvas canvas) {
-        JPanel panel = new JPanel(new GridLayout(6, 1));
+    public JPanel createMenu(JTextField textField, DrawCanvas canvas) {
+        JPanel panel = new JPanel(new GridLayout(5, 1));
         JButton newGame = new JButton("New Game");
-        JButton players = new JButton("Players");
         JButton results = new JButton("Results");
         JButton settings = new JButton("Settings");
+        JButton reset = new JButton("Reset");
         JButton exit = new JButton("Exit");
-        newGame.addActionListener(new NewGameListener(this.logics, TextField, canvas));
-        players.addActionListener(new ResultsListener(this.logics));  
+        newGame.addActionListener(new NewGameListener(this.logics, textField, canvas));
+        reset.addActionListener(new ResetListener(logics, textField, canvas));
         results.addActionListener(new ResultsListener(this.logics));  
         settings.addActionListener(new SettingsListener(this.logics));
         exit.addActionListener(new ActionListener() {
@@ -91,12 +98,13 @@ public class Ui implements Runnable {
                 System.exit(0);
             }
         });
-        panel.add(TextField);
+        panel.add(textField);
         panel.add(newGame);
-        panel.add(players);
         panel.add(results);
         panel.add(settings);
+        panel.add(reset);
         panel.add(exit);
+       
         return panel;
     }
 }

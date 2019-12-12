@@ -3,6 +3,9 @@ package tictactoe.tictactoe.domain;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  * Pelin sovelluslogiikka. Käyttöliittymän toiminnot käyttävät tätä toimiakseen.
@@ -15,7 +18,12 @@ public class Logics {
     private FileHandler fileHandler; // tiedostonkäsittelijä
     private int crossDrawed; // Määrittää minkänäköinen kuvio ristin vuorolla piirretään.
     private int zeroDrawed; // Määrittää minkänäköinen kuvio nollan vuorolla piirretään.
-
+    private int pointscross;
+    private int pointszero;
+    private String playerOne;
+    private String playerTwo;
+    private int turn;
+    private JLabel score;
     /**
      * Alustaa tyhjän pelipöydän ja muut muuttujat, sekä luo voittojen
      * laskijan..
@@ -29,8 +37,8 @@ public class Logics {
         this.gamesState = 0;
         this.random = new Random();
         this.whoseTurn = 0;
-        this.fileHandler = new FileHandler("pisteet.txt", 
-            "viimeisimmatVoitot.txt");
+        this.fileHandler = new FileHandler("points.txt", 
+            "wins.txt");
         this.crossDrawed = 1;
         this.zeroDrawed = 1;
     }
@@ -57,6 +65,35 @@ public class Logics {
 
     public int getZeroDrawed() {
         return this.zeroDrawed;
+    }
+    
+    public String getPlayerOne() {
+        return playerOne;
+    }
+    
+    public String getPlayerTwo() {
+        return playerTwo;
+    }
+    
+    public int getPointsCross() {
+        return this.pointscross;
+    }
+    
+    public int getPointsZero() {
+        return this.pointszero;
+    }
+    
+     /**
+     * Palauttaa sen pelaajan nimen, jonka vuoro on.  
+     * @return pelaajan nimen, jonka vuoro on.
+     */
+    
+    public String getTurn() {
+        if (whoseTurn == 1) {
+            return playerOne;
+        } else {
+            return playerTwo;
+        }
     }
      /**
      * Alustetaan pelin tila x:n avulla.
@@ -120,6 +157,7 @@ public class Logics {
         } else if (this.whoseTurn == 2) {
             this.whoseTurn = 1;
         }
+        getTurn();
     }
 
     /**
@@ -133,22 +171,24 @@ public class Logics {
             if (who == 1) {
                 try {
                     saveScore(who);
+                    pointscross++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 } 
                 try {
-                    fileHandler.kirjoitaViimeisimpiinVoittoihin("Risti voitti!\n");
+                    fileHandler.writeIntoWins(getPlayerOne() + " won!\n");
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
                 try {
                     saveScore(who);
+                    pointszero++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 } 
                 try {
-                    fileHandler.kirjoitaViimeisimpiinVoittoihin("Nolla voitti!\n");
+                    fileHandler.writeIntoWins(getPlayerTwo() + " won!\n");
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -156,6 +196,48 @@ public class Logics {
             return true;
         }
         return false;
+    }
+    
+     /**
+     * Kysyy pelaajan yksi nimeä, jonka pitää olla vähintään neljä merkkiä pitkä.
+     * 
+     * 
+     */
+    
+    public void getPlayerOneName() {
+        JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+        playerOne = JOptionPane.showInputDialog(frame,
+                "Player one name: ",
+                "Player name",
+                JOptionPane.INFORMATION_MESSAGE);
+        if (playerOne.equals("") || playerOne.length() < 4) {
+            JOptionPane.showMessageDialog(frame,
+                "Player name too short ",
+                "Wrong name",
+                JOptionPane.INFORMATION_MESSAGE);
+            getPlayerOneName();
+        }
+    }
+    
+    /**
+     * Kysyy pelaajan kaksi nimeä, jonka pitää olla vähintään neljä merkkiä pitkä.
+     * 
+     * 
+     */
+     
+    public void getPlayerTwoName() {
+        JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+        playerTwo = JOptionPane.showInputDialog(frame,
+                "Player two name: ",
+                "Player name",
+                JOptionPane.INFORMATION_MESSAGE);
+        if (playerTwo.equals("") || playerTwo.length() < 4) {
+            JOptionPane.showMessageDialog(frame,
+                "Player name too short ",
+                "Wrong name",
+                JOptionPane.INFORMATION_MESSAGE);
+            getPlayerTwoName();
+        }
     }
     
     /**
@@ -167,17 +249,16 @@ public class Logics {
 
     public void saveScore(int who) throws Exception {
         if (who == 1) {
-            int ristinPisteet = fileHandler.readCrossPoints();
-            ristinPisteet++;
-            int nollanPisteet = fileHandler.readZeroPoints();
+            int pointscross = fileHandler.readCrossPoints();
+            pointscross++;
+            int pointszero = fileHandler.readZeroPoints();
             
-            fileHandler.writeIntoPoints(ristinPisteet + ":" + nollanPisteet);
+            fileHandler.writeIntoPoints(pointscross + ":" + pointszero);
         } else {
             int ristinPisteet = fileHandler.readCrossPoints();
-            int nollanPisteet = fileHandler.readZeroPoints();
-            nollanPisteet++;
-            
-            fileHandler.writeIntoPoints(ristinPisteet + ":" + nollanPisteet);
+            int pointszero = fileHandler.readZeroPoints();
+            pointszero++;
+            fileHandler.writeIntoPoints(pointscross + ":" + pointszero);
         }
     }
 
@@ -264,7 +345,7 @@ public class Logics {
         }
         if (xando == 9) {
             try {
-                fileHandler.kirjoitaViimeisimpiinVoittoihin("Tasapeli!\n");
+                fileHandler.writeIntoWins("Tie!\n");
             } catch (Exception ex) {
                 Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
             }

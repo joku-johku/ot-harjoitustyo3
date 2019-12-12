@@ -13,6 +13,6 @@ public class Main { //Main-luokka
     public static void main(String[] args) { 
         Ui kayttoliittyma = new Ui();
         SwingUtilities.invokeLater(kayttoliittyma);
-        launch(args);
+//        launch(args);
     }
 }

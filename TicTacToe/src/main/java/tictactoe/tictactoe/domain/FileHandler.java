@@ -1,5 +1,4 @@
 package tictactoe.tictactoe.domain;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
@@ -8,10 +7,9 @@ import java.util.Scanner;
  * joista ne saadaan luettua.
  */
 public class FileHandler {
-    private File points; //pelaajan pisteet
-    private File latestWins; // voitot
+    private final File points; //pelaajan pisteet
+    private final File latestWins; // voitot
     private Scanner scanner; // lukija
-    
     /** Alustaa oliomuuttujat pisteet ja viimeismmatVoitot.
      * @param points Tiedoston pisteet polku.
      * @param latestWins Tiedoston viimeisimmatVoitot polku.
@@ -88,7 +86,7 @@ public class FileHandler {
      * @param written Tapahtunut tilanne.
      * @throws Exception Heittää poikkeuksen, mikäli tiedostoa ei löydy.
      */
-    public void kirjoitaViimeisimpiinVoittoihin(String written) throws Exception {
+    public void writeIntoWins(String written) throws Exception {
         FileWriter writer = new FileWriter(latestWins, true);
         writer.append(written);
         writer.close();

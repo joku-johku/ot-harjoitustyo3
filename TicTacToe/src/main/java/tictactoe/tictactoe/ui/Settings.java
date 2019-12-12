@@ -28,7 +28,7 @@ public class Settings extends JFrame {
     private Logics logics;
     
     /** Alustaa oliomuuttujat ja tekee uuden ikkunan asetuksille.
-     * @param logiikka Pelin logiikka
+     * @param logics Pelin logiikka
      */
     public Settings(Logics logics) {
         this.logics = logics;
