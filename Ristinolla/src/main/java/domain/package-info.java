@@ -1,4 +1,0 @@
-/**
- * Sovelluslogiikka 
- */
-package domain;

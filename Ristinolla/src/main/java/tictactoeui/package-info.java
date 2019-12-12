@@ -1,4 +1,0 @@
-/**
- * Käyttöliittymä 
- */
-package tictactoeui;
