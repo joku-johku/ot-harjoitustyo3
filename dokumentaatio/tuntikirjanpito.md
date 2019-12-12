@@ -16,4 +16,5 @@ päivä | aika | mitä tein
 4.12 | 8h | TicTacToeService luokan tekoa, tietojen pysyväistalletusta, javadocia, checstylea ja testausta.
 10.12 | 4h | Testien tekemistä sekä käyttäjätunnuksen luomista. ReadMe viikon 6 palautusta varten kuntoon.
 11.12 | 7h | JavaDocia ja sovelluslogiikan eriyttämistä käyttöliittymästä. Päätin tehdä ristinolla ruudukon täysin eritavalla.
-yht. | 57h |
+12.12 | 6h | Uude ruudukon testaus. Asetus luokat ja pelaajien nimen kysyminen. Plus resetointi. Tiedostoon tallennus toimii.
+yht. | 63h |
