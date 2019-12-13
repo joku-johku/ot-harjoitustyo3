@@ -91,7 +91,7 @@ public class LogicsTest {
     
     // Testaa täyden pöydän nollauksen.
     @Test
-    public void nollaus() {
+    public void reset() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 0, 1);
