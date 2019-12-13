@@ -1,66 +1,69 @@
 # Arkkitehtuurikuvaus  
 
-## Rakenne
+## Rakenne  
+
+Ohjelman rakenne noudattelee kaksitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
 ![Pakkauskaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pakkauskaavio.png)  
 
-Pakkaus tictactoeui sisältää JFrame:lla toteutetun käyttöliittymän tictactoe.domain sovelluslogiikan ja tictactoe.dao tietojen pysyväistallennuksesta vastaavan koodin.  
+Pakkaus ui sisältää JFrame:lla toteutetun käyttöliittymän ja domain sovelluslogiikan ja tietojen pysyväistallennuksesta vastaavan koodin. Pakkausten viralliset nimet ovat tictactoe.tictactoe.ui ja tictactoe.tictactoe.domain. Kuvien selvyyde takia jätin tictactoe.tictactoe osan pois.
 
 ## Käyttöliittymä  
 
 Käyttöliittymä sisältää kolme erillistä näkymää  
 
-* Kirjautumisen  
-* Uuden käyttäjän luomisen  
-* Ristinolla peli  
+* Päänäytön, jossa on peli ruudukko ja nappi-valikoima.
+* Asetukset näytön 
+* sekä painaessa new game nappia ohjelma kysyy pelaajien nimiä, jotka pitää olla vähintään neljä merkkiä pitkä.   
 
-Jokainen näistä on toteutettu käyttämällä JPanelFrame:a. Kirjautumiseen ja uuden käyttäjän luomiseen on käytetty apuna JOptionPane:a. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa tictactoeui.TicTacToe.
+Jokainen näistä on toteutettu käyttämällä JFrame:a. Pelaajien nimen kysymiseen on käytetty apuna JOptionPane:a. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa tictactoe.tictactoe.ui.
 
-Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion TicTacToeServicen metodeja.
+Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion Logics metodeja.
 
-Kun sovelluksen käyttäjä listan tilanne muuttuu, eli uusi pelaaja kirjautuu, kutsutaan sovelluksen metodia redrawPointslist joka renderöi pistelistanäkymän uudelleen sovelluslogiikalta saamansa näytettävien käyttäjien listan perusteella.  
+Kun sovellukseen kirjautuu uusi pelaaja, pelaajan voitot kerätään wins.txt tiedostoon, jossa on pelien voittajien nimet sekä tasapelit.
 
 ## Sovelluslogiikka
 
-Sovelluksen loogisen datamallin muodostavat luokat Player ja TicTacToe, jotka kuvaavat pelaajia ja pelaajien pisteitä pelissä:  
+Sovelluksen loogisen datamallin muodostaa luokka Logics, jossa suoritetaan peli vuorot ja tarkistetaan onko voitto tapahtunut. FileHandler luokassa tehdään tietojen pysyväistalletus.  
+
 ![Luokkakaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/luokkakaavio.png)  
 
-Toiminnallisista kokonaisuuksista vastaa luokkan TicTacToeService ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä on esim.  
+Toiminnallisista kokonaisuuksista vastaa luokan Logics ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esim.  
 
-* boolean login(String playername)  
+* startGame()  
+* playTurn(int who, int row, int col), joka saa parametrina kumman vuoro on, rivi ja sarake kordinaatit.
 
-TicTacToeService pääsee käsiksi käyttäjiin ja pisteihin tietojen tallennuksesta vastaavan pakkauksessa tictactoe.dao sijaitsevien rajapinnat TicTacToeDao ja PlayerDao toteuttavien luokkien kautta. Luokkien toteutuksen injektoidaan sovelluslogiikalle konstruktorikutsun yhteydessä.  
+Logics pääsee käsiksi voittoihin tietojen tallennuksesta vastaavan luokan FileHandler kautta. Luokkien toteutuksen injektoidaan sovelluslogiikalle konstruktorikutsun yhteydessä.  
 
-TicTacToeServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:  
+Logics ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:  
 
 ![Luokka/pakkauskaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/luokka_pakkauskaavio.png)
 
 
 ### Tietojen pysyväistallennus  
 
-Pakkauksen dao luokat FileTicTacToeDao ja FilePlayerDao huolehtivat tietojen tallettamisesta tiedostoihin.
+Pakkauksen domain luokka FileHandler huolehtivat tietojen tallettamisesta tiedostoon.
 
-Luokat noudattavat Data Access Object -suunnittelumallia ja ne on tarvittaessa mahdollista korvata uusilla toteutuksilla, jos sovelluksen datan talletustapaa päätetään vaihtaa. Luokat onkin eristetty rajapintojen TicTacToeDao ja PlayerDao taakse ja sovelluslogiikka ei käytä luokkia suoraan.
+Luokka noudattaa Data Access Object -suunnittelumallia ja ne on tarvittaessa mahdollista korvata uusilla toteutuksilla, jos sovelluksen datan talletustapaa päätetään vaihtaa.  Voitot tallennetaan tiedostoon wins.txt.
 
-Sovelluslogiikan testauksessa hyödynnetäänkin tätä siten, että testeissä käytetään tiedostoon tallentavien DAO-olioiden sijaan keskusmuistiin tallentavia toteutuksia.  
+ 
 
 #### Tiedostot  
 
-Sovellus tallettaa pelaajien ja pisteiden tiedot erillisiin tiedostoihin.
+Sovellus tallettaa pelien voittajat ja tasapelit yhteen tiedostoon.
 
-Sovelluksen juureen sijoitettu konfiguraatiotiedosto config.properties määrittelee tiedostojen nimet.
+Sovelluksen juureen sijoitettu konfiguraatiotiedosto config.properties määrittelee tiedoston nimen.
 
-Sovellus tallettaa käyttäjät seuraavassa formaatissa  
+Sovellus tallettaa voittajat seuraavassa formaatissa  
 
-`<mattimikko>`   
-`<kallematti>`  
+`<mikko won!>`   
+`<kalle won!>`  
   
-Pelaajien pisteet tallettavan tiedoston formaatti on seuraava  
+Tasapelin sattuessa formaatti on seuraava  
 
-`<1; mattimikko; 10>`    
-`< 2; kallematti; 12>`  
+`<Tie!>`    
   
-Kentät on eroteltu puolipistein. Ensimmäisenä käyttäjän tunniste eli id, toisena pisteiden määrä ja viimeisenä pisteiden omaavan käyttäjän käyttäjätunnus.
+Ohjelma tallentaa siis voittoihin sen nimen, jonka pelaaja on syöttänyt, kun nimeä on kysytty.
 
  
 #### Päätoiminnallisuudet  
@@ -69,35 +72,41 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuude
 
 ##### Uuden pelin aloittaminen
 
-Kun kirjautumisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus ja klikataan painiketta loginButton etenee sovelluksen kontrolli seuraavasti:  
+Kun päänäytössä on painetaan new game nappia ja on annettu pelaajien nimet etenee sovelluksen kontrolli seuraavasti:  
 
 ![Sekvenssikaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/uuden_pelin_aloittaminen.png)  
 
-Painikkeen painamiseen reagoiva tapahtumankäsittelijä kutsuu sovelluslogiikan appService metodia login antaen parametriksi kirjautuneen pelaajan käyttäjätunnuksen. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos on, eli kirjautuminen onnistuu, on seurauksena se että käyttöliittymä vaihtaa näkymäksi TicTacToe-sovelluksen, eli sovelluksen varsinaisen päänäkymän ja renderöi näkymään kirjautuneen käyttäjän pisteet.  
+Napin painaminen kutsuu luokkaa NewGameListener. Sen jälkeen paintComponent() tyhjentää ja alustaa peliruudukon pelattavaksi. Sen jälkeen kutsutaan startGame() metodia Logics-luokasta.
 
 ##### Pelaajan yksi vuoro  
 
-Kun uuden käyttäjän luomisnäkymässä on syötetty käyttäjätunnus joka ei ole jo käytössä ja klikataan painiketta createPlayer etenee sovelluksen kontrolli seuraavasti:  
+Sen jälkeen kun on aloitettu uusi peli ja on pelaajan yksi vuoro etenee kontrolli seuraavasti:  
 
-![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajan_yksi_vuoro.png)
 
-Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createPlayer antaen parametriksi luotavan käyttäjän tiedot. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos ei, eli uuden käyttäjän luominen on mahdollista, luo sovelluslogiikka Player-olion ja tallettaa sen kutsumalla playerDao:n metodia create. Tästä seurauksena on se, että käyttöliittymä vaihtaa näkymäksi loginScenen eli kirjautumisnäkymän.  
+![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajan_yksi_vuoro.png)  
+
+Sen jäkeen, kun pelaaja on klikannut ruutua johon haluaa sijoittaa merkkinsä mikä tapahtuu drawCanvasListenerin avulla. Sen jälkeen kutsutaan Logics-luokan metodia startGame(). Tämän jälkeen piirretään risti merkki kutsumalla drawCross- metodia drawCanvas. Aina kun merkki on piirretty tarkistetaan tuliko voitto, joka tapahtuu luokan Logics metodin cheackWin(1) avulla. Se saa parametrina 1 tai 2 viitaten pelaajaan yksi tai kaksi. Pelaaja yksi merkki on aina risti ja pelajaan kahden merkki on nolla.  
+
 
 ##### Vuoro, jossa ei voiteta  
 
-![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/vuoro_jossa_ei_voiteta.png)
+Sen jälkeen kun on aloitettu uusi peli ja on pelaajan yksi vuoro etenee kontrolli seuraavasti:
+
+![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/vuoro_jossa_ei_voiteta.png)  
+
+Sen jäkeen, kun pelaaja on klikannut ruutua johon haluaa sijoittaa merkkinsä mikä tapahtuu drawCanvasListenerin avulla. Sen jälkeen kutsutaan Logics-luokan metodia startGame(). Tämän jälkeen piirretään risti merkki kutsumalla drawCross- metodia drawCanvas. Aina kun merkki on piirretty tarkistetaan tuliko voitto, joka tapahtuu luokan Logics metodin cheackWin(1) avulla. Jos se palauttaa, että voittoa ei tullut tarkistetaan onko peli loppunut hasGameEnded()- metodin avulla ja pelilauta on täynnä eikä voittoa ole tullut peli on päättynyt tasapeliin.  
 
 ##### Muut toiminnallisuudet  
 
-Sama periaate toistoo sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka päivittää kirjautuneen käyttäjän tilaa. Kontrollin palatessa käyttäliittymään, päivitetään tarvittaessa todojen lista sekä aktiivinen näkyvä. Samat tapahtumat tapahtuu myös toisen pelaajan kirjautuessa sisään.  
+Sama periaate toistoo sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia. Settings-asetuksista pääsee valitsemaan haluaako pelata tavallisilla merkeillä vai latinalaisella ristillä ja hymynaamalla tai sekaisin. Merkin valinnan jälkeen vuoron suorittaminen tapahtuu samoin kuin edellä, mutta drawCross()-metodin sijaan kutsutaan merkkiä vastaavaa piirto metodia. Pelin päättyessä päivitetään voittajien listaa.
 
 ### Ohjelman rakenteeseen jääneet heikkoudet  
 
-#### Käyttöliittymä  
+#### Sovelluslogiikka  
 
-Käyttöliittymässä on vähän toisteista koodia varsinkin voittoa ja tasapelia tarkistaessa.  
+Logics-luokkaa voisi selkiyttää. Sekä FileHandlerin voisi laitta omaan pakkaukseen, mutta en pitänyt sitä kovin isona asiana että olisin lähtenyt vielä muuttamaan documentointia.
 
-#### DAO-luokat  
+#### Käyttöliittymä
 
-Myös täällä on jonkin verran toisteista koodia.
+Luokat jaettu mielestäni hyvin ja niissä tehdään vain välttämättömät asiat.
 
