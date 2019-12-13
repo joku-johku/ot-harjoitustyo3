@@ -21,7 +21,7 @@ Sovellus on tavallinen ristinolla peli, jonka tarkoituksena on saada kolme omaa 
 Ohjelman suorittaminen komentoriviltä tapahtuu komennolla  
 
 ```
-mvn compile exec:java -Dexec.mainClass=tictactoeui.TicTacToe  
+mvn compile exec:java -Dexec.mainClass=tictactoe.tictactoe.domain.Main  
 ```
 
 ### Testaus  
@@ -47,7 +47,7 @@ Komento
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _Ristinolla-1.0-SNAPSHOT.jar_
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _TicTacToe-1.0-SNAPSHOT.jar_
 
 ### JavaDoc
 
