@@ -19,7 +19,7 @@ Pelaamisen aloittaminen onnistuu painamalla oikealla olevaa ylintä nappia new g
 Tämän jälkeen pelaaminen aloitetaan, siten että kumpikin pelaajat syöttävät peräkkäin käyttäjätunnuksensa.  
 Käyttäjätunnus pitää olla vähintään neljä merkkiä pitkä. Muuten ohjema lähettää ilmoituksen player name too short.
 
-![pelaajan_nimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.PNG)
+![pelaajan_nimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.png)
 
 
 ## Ristinollan pelaaminen  
