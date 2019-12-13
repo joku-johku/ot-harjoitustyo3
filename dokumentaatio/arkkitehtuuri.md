@@ -83,6 +83,10 @@ Kun uuden käyttäjän luomisnäkymässä on syötetty käyttäjätunnus joka ei
 
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createPlayer antaen parametriksi luotavan käyttäjän tiedot. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos ei, eli uuden käyttäjän luominen on mahdollista, luo sovelluslogiikka Player-olion ja tallettaa sen kutsumalla playerDao:n metodia create. Tästä seurauksena on se, että käyttöliittymä vaihtaa näkymäksi loginScenen eli kirjautumisnäkymän.  
 
+##### Vuoro, jossa ei voiteta  
+
+![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/vuoro_jossa_ei_voiteta.png)
+
 ##### Muut toiminnallisuudet  
 
 Sama periaate toistoo sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka päivittää kirjautuneen käyttäjän tilaa. Kontrollin palatessa käyttäliittymään, päivitetään tarvittaessa todojen lista sekä aktiivinen näkyvä. Samat tapahtumat tapahtuu myös toisen pelaajan kirjautuessa sisään.  
