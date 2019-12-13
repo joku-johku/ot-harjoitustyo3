@@ -75,11 +75,11 @@ Kun kirjautumisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus ja
 
 Painikkeen painamiseen reagoiva tapahtumankäsittelijä kutsuu sovelluslogiikan appService metodia login antaen parametriksi kirjautuneen pelaajan käyttäjätunnuksen. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos on, eli kirjautuminen onnistuu, on seurauksena se että käyttöliittymä vaihtaa näkymäksi TicTacToe-sovelluksen, eli sovelluksen varsinaisen päänäkymän ja renderöi näkymään kirjautuneen käyttäjän pisteet.  
 
-##### Uuden käyttäjän luominen  
+##### Pelaajan yksi vuoro  
 
 Kun uuden käyttäjän luomisnäkymässä on syötetty käyttäjätunnus joka ei ole jo käytössä ja klikataan painiketta createPlayer etenee sovelluksen kontrolli seuraavasti:  
 
-![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/uudenkayttajanluominen.png)
+![Sekvenssikaavio2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajan_yksi_vuoro.png)
 
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createPlayer antaen parametriksi luotavan käyttäjän tiedot. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos ei, eli uuden käyttäjän luominen on mahdollista, luo sovelluslogiikka Player-olion ja tallettaa sen kutsumalla playerDao:n metodia create. Tästä seurauksena on se, että käyttöliittymä vaihtaa näkymäksi loginScenen eli kirjautumisnäkymän.  
 
