@@ -9,7 +9,7 @@ package tictactoe.tictactoe.ui;
  *
  * @author Omistaja
  */
-import tictactoe.tictactoe.ui.ResultsListener;
+
 import tictactoe.tictactoe.ui.SettingsListener;
 import tictactoe.tictactoe.ui.DrawCanvasListener;
 import tictactoe.tictactoe.ui.DrawCanvas;
@@ -84,13 +84,11 @@ public class Ui implements Runnable {
     public JPanel createMenu(JTextField textField, DrawCanvas canvas) {
         JPanel panel = new JPanel(new GridLayout(5, 1));
         JButton newGame = new JButton("New Game");
-        JButton results = new JButton("Results");
         JButton settings = new JButton("Settings");
         JButton reset = new JButton("Reset");
         JButton exit = new JButton("Exit");
         newGame.addActionListener(new NewGameListener(this.logics, textField, canvas));
         reset.addActionListener(new ResetListener(logics, textField, canvas));
-        results.addActionListener(new ResultsListener(this.logics));  
         settings.addActionListener(new SettingsListener(this.logics));
         exit.addActionListener(new ActionListener() {
             @Override
@@ -100,7 +98,6 @@ public class Ui implements Runnable {
         });
         panel.add(textField);
         panel.add(newGame);
-        panel.add(results);
         panel.add(settings);
         panel.add(reset);
         panel.add(exit);

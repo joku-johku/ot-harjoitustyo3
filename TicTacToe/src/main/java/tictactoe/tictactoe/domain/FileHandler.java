@@ -73,7 +73,7 @@ public class FileHandler {
         writer.close();
     }
     
-    /** Tyhjentää viimeisimmatVoitot-tiedoston.
+    /** Tyhjentää latestWins-tiedoston.
      * @throws Exception Heittää poikkeuksen, mikäli tiedostoa ei löydy.
      */
     public void resetLatestWins() throws Exception {
