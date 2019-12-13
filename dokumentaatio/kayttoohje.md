@@ -46,7 +46,7 @@ Tasapeli:
 
 Aina kun yksi peli päättyy voidaan painaa, joko new game nappia, jonka jälkeen ohjelma kysyy jälleen pelaajien nimiä tai painaa reset nappia, mikä tyhjentää taulun ja aloittaa uuden pelin samoilla pelaajien nimillä.  
 
-![reset](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/reset.PNG)  
+![reset](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/resetointi.jpg)  
 
 Ohjelma arpoo pelin aloittajan ilmoittaa sen tees ruudussa.  
 
