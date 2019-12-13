@@ -2,23 +2,15 @@
 
 Lataa tiedosto [tictactoe.jar](https://github.com/joku-johku/ot-harjoitustyo3/releases)  
 
-## Konfigurointi  
-
-Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto config.properties, joka määrittelee käyttäjät ja pisteet 
-tallettavien tiedostojen nimet. Tiedoston muoto on seuraava  
-
-`<playerFile=players.txt>`  
-`<tictactoeFile=points.txt>`  
-
 ## Ohjelman käynnistäminen  
 
 Ohjelma käynnistetään komennolla  
 
-`<java -jar Ristinolla-1.0-SNAPSHOT.jar>`  
+`<java -jar TicTacToe.jar>`  
 
 ## Kirjautuminen  
 
-Sovellus käynnistyy kirjautumisnäkymään:  
+Sovellus käynnistyy päänäyttöön:  
 
 ![pelaajannimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.png)
 
