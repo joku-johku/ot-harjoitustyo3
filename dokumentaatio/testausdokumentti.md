@@ -24,8 +24,7 @@ Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
 
 ### Asennus ja konfigurointi  
 
-Sovellus on haettu ja sitä on testattu käyttöohjeen kuvaamalla tavalla sekä OSX- että Linux-ympäristöön siten, että sovelluksen 
-käynnistyshakemistossa on ollut käyttöohjeen kuvauksen mukainen config.properties-tiedosto.
+Sovellus on haettu ja sitä on testattu käyttöohjeen kuvaamalla tavalla sekä OSX- että Linux-ympäristöön.
 
 Sovellusta on testattu sekä tilanteissa, joissa on käytetty reset nappia sekä muita merkki mahdollisuuksia.  
 
