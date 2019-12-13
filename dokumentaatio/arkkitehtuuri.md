@@ -67,11 +67,11 @@ Kentät on eroteltu puolipistein. Ensimmäisenä käyttäjän tunniste eli id, t
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
 
-##### Käyttäjän kirjautuminen
+##### Uuden pelin aloittaminen
 
 Kun kirjautumisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus ja klikataan painiketta loginButton etenee sovelluksen kontrolli seuraavasti:  
 
-![Sekvenssikaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/sekvenssikaavio.png)  
+![Sekvenssikaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/uuden_pelin_aloittaminen.png)  
 
 Painikkeen painamiseen reagoiva tapahtumankäsittelijä kutsuu sovelluslogiikan appService metodia login antaen parametriksi kirjautuneen pelaajan käyttäjätunnuksen. Sovelluslogiikka selvittää playerDao:n avulla onko käyttäjätunnus olemassa. Jos on, eli kirjautuminen onnistuu, on seurauksena se että käyttöliittymä vaihtaa näkymäksi TicTacToe-sovelluksen, eli sovelluksen varsinaisen päänäkymän ja renderöi näkymään kirjautuneen käyttäjän pisteet.  
 
