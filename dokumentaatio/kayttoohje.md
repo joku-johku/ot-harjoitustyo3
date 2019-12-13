@@ -12,23 +12,23 @@ Ohjelma käynnistetään komennolla
 
 Sovellus käynnistyy päänäyttöön:  
 
-![pelaajannimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.png)
+![päänäkymä](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/paanakyma.PNG)
 
-Pelaamisen aloittaminen onnistuu kirjoittamalla käyttäjätunnus syötekenttään ja painamalla ok. 
+Pelaamisen aloittaminen onnistuu painamalla oikealla olevaa ylintä nappia new game
 
-Tämän jälkeen pelaaminen aloitetaan, siten että kumpikin pelaaja syöttää käyttäjätunnuksensa.  
-Käyttäjätunnus pitää olla vähintään neljä merkkiä pitkä. 
+Tämän jälkeen pelaaminen aloitetaan, siten että kumpikin pelaajat syöttävät peräkkäin käyttäjätunnuksensa.  
+Käyttäjätunnus pitää olla vähintään neljä merkkiä pitkä. Muuten ohjema lähettää ilmoituksen player name too short.
+
+![pelaajannimi](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pelaajannimi.PNG)
 
 
 ## Ristinollan pelaaminen  
 
-Onnistuneen kirjautumisen myötä siirrytään peli näkumään, jossa on tyhjä 3x3 ruudukko.  
+Onnistuneen kirjautumisen myötä siirrytään pelaamaan ja ruudukko kertoo kumpi pelaaja aloittaa.  
 
-![tyhjaruutu](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/tyhjaruudukko.PNG)  
+![kalle_aloitta](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/kalle_aloittaa.PNG)  
 
-Ensimmäisenä vuorossa oleva pelaaja on X ja toinen O. Merkki lisätään näkymään klikkaamalla ruutua.  
-
-![ruutu2](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/ruudukko2.PNG)
+Kumpikin pelaa lisää oman merkkinsä vuoronperää ja yrittää saada kolme omaa merkiiään vierekkäin.  Jos kumpikaan pelaaja ei onnistu tässä tavoitteessa syntyy tasapeli.
 
 Tässä muutamia mahdollisia lopputuloksia.  
 
@@ -44,11 +44,37 @@ Tasapeli:
 
 ![kallevoittaa](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/tasapeli.PNG)  
 
-Aina kun yksi peli päättyy ja painetaan ok-nappia peli resetoi ja tallentaa pisteen pelin voittajalle pistetaulukkoon, joka näkyy ruudukon alalaidassa. Jos tulee tasapeli kumpikaan pelaaja ei saa pistettä.
+Aina kun yksi peli päättyy voidaan painaa, joko new game nappia, jonka jälkeen ohjelma kysyy jälleen pelaajien nimiä tai painaa reset nappia, mikä tyhjentää taulun ja aloittaa uuden pelin samoilla pelaajien nimillä.  
 
+![reset](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/reset.PNG)  
 
+Ohjelma arpoo pelin aloittajan ilmoittaa sen tees ruudussa.  
 
+![kalle_aloitta](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/kalle_aloittaa.PNG)  
 
+## Merkkien valinta  
 
-Ohjelma sulkeutuu painamalla raksia oikeasta yläkulmasta.
+Stteings-nappia painamalla pelaaja pääsee valitsemaan oman merkkinsä.  
+
+![settings](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/punainen_ympyra.PNG)  
+
+Sen jälkeen avautuu tämä näkymä:  
+
+![settings](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/settings.PNG)  
+
+Tämän valinnan jälkeen merkit näyttävät tältä:  
+
+![muut_merkit](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/muut_merkit.PNG)  
+
+## Pelin lopettaminen
+
+Pelin voi lopettaa, joko exit-nappia painamalla tai oikeata yläkulmasta rastista.  
+
+![exit](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/exit.PNG)  
+
+##  Pysyväistallennus  
+
+Pelin voittajat tallenetaan wins.txt tiedostoon, joka näyttää tältä:  
+
+![wins](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/wins.PNG)  
 
