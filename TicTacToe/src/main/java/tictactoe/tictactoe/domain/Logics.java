@@ -22,8 +22,8 @@ public class Logics {
     private int pointszero;
     private String playerOne;
     private String playerTwo;
-    private int turn;
-    private JLabel score;
+    
+   
     /**
      * Alustaa tyhjän pelipöydän ja muut muuttujat, sekä luo voittojen
      * laskijan..
@@ -249,16 +249,16 @@ public class Logics {
 
     public void saveScore(int who) throws Exception {
         if (who == 1) {
-            int pointscross = fileHandler.readCrossPoints();
-            pointscross++;
-            int pointszero = fileHandler.readZeroPoints();
+            int crosspoints = fileHandler.readCrossPoints();
+            crosspoints++;
+            int zeropoints = fileHandler.readZeroPoints();
             
-            fileHandler.writeIntoPoints(pointscross + ":" + pointszero);
+            fileHandler.writeIntoPoints(crosspoints + ":" + zeropoints);
         } else {
-            int ristinPisteet = fileHandler.readCrossPoints();
-            int pointszero = fileHandler.readZeroPoints();
+            int crosspoints = fileHandler.readCrossPoints();
+            int zeropoints = fileHandler.readZeroPoints();
             pointszero++;
-            fileHandler.writeIntoPoints(pointscross + ":" + pointszero);
+            fileHandler.writeIntoPoints(crosspoints + ":" + zeropoints);
         }
     }
 

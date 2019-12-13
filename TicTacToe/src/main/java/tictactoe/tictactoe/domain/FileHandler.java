@@ -19,7 +19,7 @@ public class FileHandler {
         this.latestWins = new File(latestWins);
     }
     
-    /** Etsii ja palauttaa pisteet-tiedostosta ristin pisteiden määrän.
+    /** Etsii ja palauttaa points-tiedostosta ristin pisteiden määrän.
      * @return Palauttaa ristin pisteiden määrän.
      * @throws Exception Heittää poikkeuksen, mikäli tiedostoa ei löydy.
      */
@@ -33,7 +33,7 @@ public class FileHandler {
         String cross = splits[0];
         return Integer.parseInt(cross);
     }
-    /** Etsii ja palauttaa pisteet-tiedostosta nollan pisteiden määrän.
+    /** Etsii ja palauttaa points-tiedostosta nollan pisteiden määrän.
      * @return Palauttaa nollan pisteiden määrän.
      * @throws Exception Heittää poikkeuksen, mikäli tiedostoa ei löydy.
      */
