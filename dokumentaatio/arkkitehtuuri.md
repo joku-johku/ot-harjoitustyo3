@@ -23,7 +23,7 @@ Kun sovelluksen käyttäjä listan tilanne muuttuu, eli uusi pelaaja kirjautuu, 
 ## Sovelluslogiikka
 
 Sovelluksen loogisen datamallin muodostavat luokat Player ja TicTacToe, jotka kuvaavat pelaajia ja pelaajien pisteitä pelissä:  
-![Luokkakaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/kuva.png)  
+![Luokkakaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/luokkakaavio.png)  
 
 Toiminnallisista kokonaisuuksista vastaa luokkan TicTacToeService ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä on esim.  
 
