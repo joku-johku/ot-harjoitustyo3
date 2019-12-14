@@ -40,7 +40,7 @@ public class DrawCanvas extends JPanel {
         g.drawLine(0, 300, 300, 300);
     }
     
-    /** Piirtää normaalin ristin haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan ristinAsetus tulee olla 1,
+    /** Piirtää normaalin ristin haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan crossDrawed tulee olla 1,
      *  jotta tällainen risti piirretään.
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
@@ -52,7 +52,7 @@ public class DrawCanvas extends JPanel {
         graphics.drawLine(x + 50, y, x, y + 50);
     }
     
-    /** Piirtää latinalaisen ristin haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan ristinAsetus tulee olla 2,
+    /** Piirtää latinalaisen ristin haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan crossDrawed tulee olla 2,
      *  jotta tällainen risti piirretään.
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
@@ -64,7 +64,7 @@ public class DrawCanvas extends JPanel {
         graphics.drawLine(x + 25, y - 15, x + 25, y + 70);
     }
     
-    /** Piirtää normaalin nollan haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan nollanAsetus tulee olla 1,
+    /** Piirtää normaalin nollan haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan zeroDrawed tulee olla 1,
      *  jotta tällainen nolla piirretään.
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti
@@ -75,7 +75,7 @@ public class DrawCanvas extends JPanel {
         graphics.drawOval(x - 12, y - 12, 75, 75);
     }
     
-    /** Piirtää hymynaaman haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan nollanAsetus tulee olla 2,
+    /** Piirtää hymynaaman haluttuun koordinaattiin piirtoalustassa. Logiikan muuttujan zeroDrawed tulee olla 2,
      *  jotta tällainen "nolla" piirretään.
      * @param x Piirtokohdan x-koordinaatti
      * @param y Piirtokohdan y-koordinaatti

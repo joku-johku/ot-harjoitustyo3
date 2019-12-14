@@ -25,11 +25,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import tictactoe.tictactoe.domain.FileHandler;
 import tictactoe.tictactoe.ui.NewGameListener;
 import tictactoe.tictactoe.domain.Logics;
 
-/** Sovelluksen pääikkuna. Käyttöliittymä koostuu kahdesta osasta: piirtoalustasta ja menusta.
- *  Menuun kuuluu tekstikenttä ja painikkeet.
+/** Sovelluksen pääikkuna. Käyttöliittymä koostuu kahdesta osasta: piirtoalustasta, tekstikentästä ja napeista.
+ *  
  */
 public class Ui implements Runnable {
     private JFrame frame;
@@ -76,9 +77,9 @@ public class Ui implements Runnable {
     
     /**  
      * Luo oikean puolen käyttöliittymästä. Menu sisältää tekstikentän, sekä napit uudelle pelille ja
-     *   pelin lopettamiselle. Tätä metodia kutsutaan luoKomponentit-metodissa. 
+     *   pelin lopettamiselle. Tätä metodia kutsutaan createComponents-metodissa. 
      * @param textField Käyttöliittymän tekstikenttä
-     * @param canvas DrawCanvas täytyy antaa uuden pelin kuuntelijalle
+     * @param canvas DrawCanvas täytyy antaa NewGameListener:ille.
      * @return Palauttaa panelin
      */
     public JPanel createMenu(JTextField textField, DrawCanvas canvas) {

@@ -50,7 +50,7 @@ public class LogicsTest {
      public void hello() {}
       // Testaa konstruktorin luoman pöydän alkioiden sisällön, sekä muut sen luomat muuttujat.
     @Test
-    public void konstruktorinLuomatMuuttujat() {
+    public void constructorsCreatedByParameters() {
         int poyta[][] = logics.getBoard();
         
         for (int i = 0; i < 3; i++) {
@@ -65,31 +65,31 @@ public class LogicsTest {
         assertEquals(1, logics.getZeroDrawed());
     }
     
-    // Testaa setPelinTila-metodin.
+    // Testaa setGameState-metodin.
     @Test
-    public void setPelinTila() {
+    public void setGameState() {
         assertEquals(0, logics.getGamesState());
         logics.setGamesState(1);
         assertEquals(1, logics.getGamesState());
     }
     
-    // Testaa setRistinAsetus-metodin.
+    // Testaa setCrossDrawed-metodin.
     @Test
-    public void setRistinAsetus() {
+    public void setCrossDrawed() {
         assertEquals(1, logics.getCrossDrawed());
         logics.setCrossDrawed(2);
         assertEquals(2, logics.getCrossDrawed());
     }
     
-    // Testaa setNollanAsetus-metodin.
+    // Testaa setZeroDrawed-metodin.
     @Test
-    public void setNollanAsetus() {
+    public void setZeroDrawed() {
         assertEquals(1, logics.getZeroDrawed());
         logics.setZeroDrawed(2);
         assertEquals(2, logics.getZeroDrawed());
     }
     
-    // Testaa täyden pöydän nollauksen.
+    // Testaa täyden pöydän resetoinnin.
     @Test
     public void reset() {
         logics.startGame();
@@ -112,9 +112,9 @@ public class LogicsTest {
         }
     }
     
-    // Testaa metodin onkoPoytaTaynna.
+    // Testaa metodin isTableFull.
     @Test
-    public void taynnaOlevaPoyta() {
+    public void fullTable() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 0, 1);
@@ -129,9 +129,9 @@ public class LogicsTest {
         assertTrue(logics.isBoardFull());
     }
     
-    // Testaa onkoPoytaTaynna false.
+    // Testaa isTableFull false.
     @Test
-    public void eiTaynnaOlevaPoyta() {
+    public void notFullTable() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 0, 1);
@@ -148,7 +148,7 @@ public class LogicsTest {
      *        ...
      *        ... */
     @Test
-    public void ylaRiviX() {
+    public void firstRowX() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 0, 1);
@@ -160,7 +160,7 @@ public class LogicsTest {
      *        ...
      *        ... */
     @Test
-    public void ylaRiviO() {
+    public void firstRowO() {
         logics.startGame();
         logics.playTurn(2, 0, 0);
         logics.playTurn(2, 0, 1);
@@ -172,7 +172,7 @@ public class LogicsTest {
      *        xxx
      *        ... */
     @Test
-    public void keskiRiviX() {
+    public void middleRowX() {
         logics.startGame();
         logics.playTurn(1, 1, 0);
         logics.playTurn(1, 1, 1);
@@ -184,7 +184,7 @@ public class LogicsTest {
      *        ooo
      *        ... */
     @Test
-    public void keskiRiviO() {
+    public void middleRowO() {
         logics.startGame();
         logics.playTurn(2, 1, 0);
         logics.playTurn(2, 1, 1);
@@ -196,7 +196,7 @@ public class LogicsTest {
      *        ...
      *        xxx */
     @Test
-    public void alaRiviX() {
+    public void lastRowX() {
         logics.startGame();
         logics.playTurn(1, 2, 0);
         logics.playTurn(1, 2, 1);
@@ -208,7 +208,7 @@ public class LogicsTest {
      *        ...
      *        ooo */
     @Test
-    public void alaRiviO() {
+    public void lastRowO() {
         logics.startGame();
         logics.playTurn(2, 2, 0);
         logics.playTurn(2, 2, 1);
@@ -220,7 +220,7 @@ public class LogicsTest {
      *        x..
      *        x.. */
     @Test
-    public void vasenSarakeX() {
+    public void leftColX() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 1, 0);
@@ -232,7 +232,7 @@ public class LogicsTest {
      *        o..
      *        o.. */
     @Test
-    public void vasenSarakeO() {
+    public void leftColO() {
         logics.startGame();
         logics.playTurn(2, 0, 0);
         logics.playTurn(2, 1, 0);
@@ -244,7 +244,7 @@ public class LogicsTest {
      *        .x.
      *        .x. */
     @Test
-    public void keskiSarakeX() {
+    public void middleColX() {
         logics.startGame();
         logics.playTurn(1, 0, 1);
         logics.playTurn(1, 1, 1);
@@ -256,7 +256,7 @@ public class LogicsTest {
      *        .o.
      *        .o. */
     @Test
-    public void keskiSarakeO() {
+    public void middleColO() {
         logics.startGame();
         logics.playTurn(2, 0, 1);
         logics.playTurn(2, 1, 1);
@@ -268,7 +268,7 @@ public class LogicsTest {
      *        ..x
      *        ..x */
     @Test
-    public void oikeaSarakeX() {
+    public void rightColX() {
         logics.startGame();
         logics.playTurn(1, 0, 2);
         logics.playTurn(1, 1, 2);
@@ -281,7 +281,7 @@ public class LogicsTest {
      *        ..o */
     
     @Test
-    public void oikeaSarakeO() {
+    public void rightColO() {
         logics.startGame();
         logics.playTurn(2, 0, 2);
         logics.playTurn(2, 1, 2);
@@ -293,7 +293,7 @@ public class LogicsTest {
      *        .x.
      *        ..x */
     @Test
-    public void viistoVasemmaltaOikealleX() {
+    public void diagonalFromLeftToRightX() {
         logics.startGame();
         logics.playTurn(1, 0, 0);
         logics.playTurn(1, 1, 1);
@@ -305,7 +305,7 @@ public class LogicsTest {
      *        .o.
      *        ..o */
     @Test
-    public void viistoVasemmaltaOikealleO() {
+    public void diagonalFromLeftToRightO() {
         logics.startGame();
         logics.playTurn(2, 0, 0);
         logics.playTurn(2, 1, 1);
@@ -317,7 +317,7 @@ public class LogicsTest {
      *        .x.
      *        x.. */
     @Test
-    public void viistoOikealtaVasemmalleX() {
+    public void diagonalFromRightToLeftX() {
         logics.startGame();
         logics.playTurn(1, 0, 2);
         logics.playTurn(1, 1, 1);
@@ -329,7 +329,7 @@ public class LogicsTest {
      *        .o.
      *        o.. */
     @Test
-    public void viistoOikealtaVasemmalleO() {
+    public void diagonalFromRightToLeftO() {
         logics.startGame();
         logics.playTurn(2, 0, 2);
         logics.playTurn(2, 1, 1);
@@ -341,7 +341,7 @@ public class LogicsTest {
      *        .o.
      *        o..*/
     @Test
-    public void viistoFalse() {
+    public void diagonalFalse() {
         logics.startGame();
         logics.playTurn(1, 0, 2);
         logics.playTurn(2, 1, 1);

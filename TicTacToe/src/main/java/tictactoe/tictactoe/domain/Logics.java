@@ -37,8 +37,7 @@ public class Logics {
         this.gamesState = 0;
         this.random = new Random();
         this.whoseTurn = 0;
-        this.fileHandler = new FileHandler("points.txt", 
-            "wins.txt");
+        this.fileHandler = new FileHandler("wins.txt");
         this.crossDrawed = 1;
         this.zeroDrawed = 1;
     }
@@ -170,7 +169,6 @@ public class Logics {
         if (this.checkRows(who) || this.checkCols(who) || this.checkCrossing(who)) {
             if (who == 1) {
                 try {
-                    saveScore(who);
                     pointscross++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
@@ -182,7 +180,6 @@ public class Logics {
                 }
             } else {
                 try {
-                    saveScore(who);
                     pointszero++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
@@ -237,28 +234,6 @@ public class Logics {
                 "Wrong name",
                 JOptionPane.INFORMATION_MESSAGE);
             getPlayerTwoName();
-        }
-    }
-    
-    /**
-     * Lukee pisteet tiedostoihin.
-     *
-     * @param who Risti tai nolla.
-     * @throws Exception Jos kukaa ei ole olemassa.
-     */
-
-    public void saveScore(int who) throws Exception {
-        if (who == 1) {
-            int crosspoints = fileHandler.readCrossPoints();
-            crosspoints++;
-            int zeropoints = fileHandler.readZeroPoints();
-            
-            fileHandler.writeIntoPoints(crosspoints + ":" + zeropoints);
-        } else {
-            int crosspoints = fileHandler.readCrossPoints();
-            int zeropoints = fileHandler.readZeroPoints();
-            pointszero++;
-            fileHandler.writeIntoPoints(crosspoints + ":" + zeropoints);
         }
     }
 

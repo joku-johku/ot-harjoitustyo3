@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tictactoe.tictactoe.ui;
 
-/**
- *
- * @author Omistaja
- */
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -65,7 +57,7 @@ public class Settings extends JFrame {
         
         JButton close = new JButton("Close");
         
-        this.teeKuuntelijat(cross1, cross2, zero1, zero2, close);
+        this.createListeners(cross1, cross2, zero1, zero2, close);
         
         container.add(pickCross);
         container.add(cross1);
@@ -83,7 +75,7 @@ public class Settings extends JFrame {
      * @param zero2 Toinen asetus nollalle.
      * @param close Nappi ikkunan sulkemiselle.
      */
-    private void teeKuuntelijat(JRadioButton cross1, JRadioButton cross2, JRadioButton zero1, JRadioButton zero2, JButton close) {
+    private void createListeners(JRadioButton cross1, JRadioButton cross2, JRadioButton zero1, JRadioButton zero2, JButton close) {
         cross1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

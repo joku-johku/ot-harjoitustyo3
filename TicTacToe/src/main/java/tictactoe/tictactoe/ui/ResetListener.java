@@ -8,23 +8,25 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import tictactoe.tictactoe.domain.Logics;
 
+/** ActionListener käyttöliittymän Reset -napille.
+ */
 
 public class ResetListener implements ActionListener {
-    private Logics logiikka;
-    private JTextField tekstiKentta;
-    private DrawCanvas piirtoalusta;
+    private Logics logics;
+    private JTextField textField;
+    private DrawCanvas canvas;
     private Graphics graphics;
     
     
     /** Alustaa oliomuuttujat.
-     * @param logiikka Pelin logiikka
-     * @param tekstiKentta Tekstikenttä
-     * @param piirtoalusta DrawCanvas, johon ristit ja nollat piirretään.
+     * @param logics Pelin logiikka
+     * @param textField Tekstikenttä
+     * @param canvas DrawCanvas, johon ristit ja nollat piirretään.
      */
-    public ResetListener(Logics logiikka, JTextField tekstiKentta, DrawCanvas piirtoalusta) {
-        this.logiikka = logiikka;
-        this.tekstiKentta = tekstiKentta;
-        this.piirtoalusta = piirtoalusta;
+    public ResetListener(Logics logics, JTextField textField, DrawCanvas canvas) {
+        this.logics = logics;
+        this.textField = textField;
+        this.canvas = canvas;
        
     }
 
@@ -33,16 +35,16 @@ public class ResetListener implements ActionListener {
      * @param e 
      */
     public void actionPerformed(ActionEvent e) {
-        this.graphics = piirtoalusta.getGraphics();
-        this.piirtoalusta.paintComponent(graphics);
-        this.logiikka.startGame();
-        this.logiikka.reset();
+        this.graphics = canvas.getGraphics();
+        this.canvas.paintComponent(graphics);
+        this.logics.startGame();
+        this.logics.reset();
         String starter = "";
-        if (this.logiikka.getWhoseTurn() == 1) {
-            starter = this.logiikka.getPlayerOne() + " starts!";
+        if (this.logics.getWhoseTurn() == 1) {
+            starter = this.logics.getPlayerOne() + " starts!";
         } else {
-            starter = this.logiikka.getPlayerTwo() + " starts";
+            starter = this.logics.getPlayerTwo() + " starts";
         }
-        this.tekstiKentta.setText("New game started " + starter);
+        this.textField.setText("New game started " + starter);
     }
 }

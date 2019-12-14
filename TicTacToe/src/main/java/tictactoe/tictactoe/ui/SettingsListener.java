@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import tictactoe.tictactoe.domain.Logics;
 
-/** ActionListener käyttöliittymän Asetukset-napille.
+/** ActionListener käyttöliittymän Settings-napille.
  */
 public class SettingsListener implements ActionListener {
     private Logics logics;

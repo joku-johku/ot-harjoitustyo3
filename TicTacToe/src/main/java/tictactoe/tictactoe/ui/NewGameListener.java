@@ -16,25 +16,24 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import tictactoe.tictactoe.domain.Logics;
 
-/** ActionListener käyttöliittymän Uusi peli -napille.
+/** ActionListener käyttöliittymän New game -napille.
  */
 public class NewGameListener implements ActionListener {
-    private Logics logiikka;
-    private JTextField tekstiKentta;
-    private DrawCanvas piirtoalusta;
+    private Logics logics;
+    private JTextField textField;
+    private DrawCanvas canvas;
     private Graphics graphics;
     private Logics playerOne;
     
     /** Alustaa oliomuuttujat.
-     * @param logiikka Pelin logiikka
-     * @param tekstiKentta Tekstikenttä
-     * @param piirtoalusta DrawCanvas, johon ristit ja nollat piirretään.
+     * @param logics Pelin logiikka
+     * @param textField Tekstikenttä
+     * @param canvas DrawCanvas, johon ristit ja nollat piirretään.
      */
-    public NewGameListener(Logics logiikka, JTextField tekstiKentta, DrawCanvas piirtoalusta) {
-        this.logiikka = logiikka;
-        this.tekstiKentta = tekstiKentta;
-        this.piirtoalusta = piirtoalusta;
-        this.playerOne = playerOne;
+    public NewGameListener(Logics logics, JTextField textField, DrawCanvas canvas) {
+        this.logics = logics;
+        this.textField = textField;
+        this.canvas = canvas;
     }
     
     /** Tyhjentää piirretyt ristit ja nollat, aloittaa logiikassa uuden pelin ja kertoo tekstikentässä kuka aloittaa.
@@ -42,18 +41,18 @@ public class NewGameListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.graphics = piirtoalusta.getGraphics();
-        this.piirtoalusta.paintComponent(graphics);
-        this.logiikka.startGame();
-        this.logiikka.getPlayerOneName();
-        this.logiikka.getPlayerTwoName();
-        String aloittaja = "";
-        if (this.logiikka.getWhoseTurn() == 1) {
-            aloittaja = this.logiikka.getPlayerOne() + " starts!";
+        this.graphics = canvas.getGraphics();
+        this.canvas.paintComponent(graphics);
+        this.logics.startGame();
+        this.logics.getPlayerOneName();
+        this.logics.getPlayerTwoName();
+        String starter = "";
+        if (this.logics.getWhoseTurn() == 1) {
+            starter = this.logics.getPlayerOne() + " starts!";
         } else {
-            aloittaja = this.logiikka.getPlayerTwo() + " starts";
+            starter = this.logics.getPlayerTwo() + " starts";
         }
-        this.tekstiKentta.setText("New game " + aloittaja);
+        this.textField.setText("New game " + starter);
         
     }
     
