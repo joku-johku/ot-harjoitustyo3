@@ -36,3 +36,5 @@ syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä
 ## Sovellukseen jääneet laatuongelmat  
 
 Jos painaa reset nappulaa ennen kuin painaa new game nappulaa ohjelma antaa aloittaa pelin vaikka pelaajien nimiä ei ole kysytty, jolloin pelaajien niminä toimivat null.
+
+En myöskään checkstylesta poistanut käyttöliittymä-luokkia, mutta virheitä on vain neljä ja ne kaikki ovat liian pitkiä metodien nimiä.
