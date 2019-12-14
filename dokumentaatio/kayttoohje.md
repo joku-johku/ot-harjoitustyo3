@@ -1,6 +1,6 @@
 # Käyttöohje  
 
-Lataa tiedosto [TicTacToe.jar](https://github.com/joku-johku/ot-harjoitustyo3/releases)  
+Lataa tiedosto [TicTacToe.jar](https://github.com/joku-johku/ot-harjoitustyo3/releases/tag/Loppurelease)  
 
 ## Ohjelman käynnistäminen  
 
