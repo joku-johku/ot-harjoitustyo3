@@ -19,11 +19,15 @@ Viikon 5 palautuksessa toimivat ominaisuudet: ohjelma kysyy pelaajien nimiä. Ni
 
 Viikon 6 palautuksessa peli toimii kuten pitääkin. Aloitin PlayerDao ja PointsDao luokkien luomisen, jotta pelaajien nimien ja pisteiden tallentaminen tiedostoihin onnistuu. Testikattavuus hyvä. Lisäsin myös testiluokkia. Samoin loin fakePlayer luokan. Aloitin myös käyttäjätunnuksen luomis näytön koodaamista, mutta en saanut sitä vielä toimimaan kunnolla joten en sitä vielä pushannut. Aika ei roottänyt tällä viikolla sovelluslogiikan eriyttämiseen käyttöliittymästä.
 
+### Lopullinen versio
+
+Lopullisessa versiossa on kaikki perusversion ominaisuudet. Lisäominaisuuksia ovat vvaoittajien tallennus tekstitiedostoon mahsollisuus valita merkin malli tavallisen ristin ja latinalaisen ristin sekä nolla ja hymynaaman väliltä. Ohjelmassa on myös Reset ja Exit napit. Pelaajilta kysytään myös nimeä, joka on vähintään neljä merkkiä pitkä.
+
 ### Jatkokehitysideoita
-* Luoda oma käyttäjätunnus, jonka pitää olla uniikki ja vähintään neljä merkkiä pitkä.
+* Luoda oma käyttäjätunnus, jonka pitää olla uniikki ja vähintään neljä merkkiä pitkä. (tehty)
 * Käyttäjätunnuksen lisäksi jokaisella käyttäjällä olisi salasana.
-* Highscore-taulu johon kerättäisiin jokaisen käyttäjän voitettujen pelien määrä.
+* Highscore-taulu johon kerättäisiin jokaisen käyttäjän voitettujen pelien määrä. (tehty osittain)
 * Mahdollisuus valita peliruudukon koko.
-* Mahdollisuus päättää itse oma merkkinsä.
+* Mahdollisuus päättää itse oma merkkinsä. (tehty)
 * Mahdollisuus poistaa käyttäjätunnus, jolloin myös hänen voitto määränsä poistuu.
-* Peliruudussa kerrotaan kumman pelaajan vuoro on seuraavaksi.
+* Peliruudussa kerrotaan kumpi pelaaja aloittaa. (tehty)
