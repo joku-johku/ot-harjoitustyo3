@@ -74,7 +74,7 @@ Pelin voi lopettaa, joko exit-nappia painamalla tai oikeata yläkulmasta rastist
 
 ##  Pysyväistallennus  
 
-Pelin voittajat tallenetaan wins.txt tiedostoon, joka näyttää tältä:  
+Ohjelma luo tiedoston wins.txt, johon tallennetaan voittajat tähän malliin:
 
 ![wins](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/wins.PNG)  
 
