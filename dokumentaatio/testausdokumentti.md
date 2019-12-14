@@ -14,7 +14,7 @@ Luokka logicsTest testaa sovelluslogiikkaa.
 
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 63% ja haarautumakattavuus 71 %.  
 
-![testikattavuus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/oikea_testikattavuus.PNG)
+![testikattavuus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/testikattavuus.PNG)
 
 Testaamatta jäi FileHandler-luokka.
 
@@ -35,4 +35,4 @@ syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä
 
 ## Sovellukseen jääneet laatuongelmat  
 
-En huomaa mitään ongelmia ohjelmaa testatessa.
+Jos painaa reset nappulaa ennen kuin painaa new game nappulaa ohjelma antaa aloittaa pelin vaikka pelaajien nimiä ei ole kysytty, jolloin pelaajien niminä toimivat null.
