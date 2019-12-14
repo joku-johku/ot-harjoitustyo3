@@ -18,4 +18,5 @@ päivä | aika | mitä tein
 11.12 | 7h | JavaDocia ja sovelluslogiikan eriyttämistä käyttöliittymästä. Päätin tehdä ristinolla ruudukon täysin eritavalla.
 12.12 | 6h | Uuden ruudukon testaus. Asetus luokat ja pelaajien nimen kysyminen. Plus resetointi. Tiedostoon tallennus toimii.
 13.12 | 5h | Hieno säätöä, testausta ja dokumentointia.
-yht. | 68h |
+14.12 | 2h | Loppusilaukset.
+yht. | 70h |
