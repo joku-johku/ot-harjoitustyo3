@@ -12,7 +12,7 @@ Luokka logicsTest testaa sovelluslogiikkaa.
 
 ## TicTacToe  
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 63% ja haarautumakattavuus 71 %.  
+Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 72% ja haarautumakattavuus 75 %.  
 
 ![testikattavuus](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/testikattavuus.PNG)
 
