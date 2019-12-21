@@ -1,12 +1,12 @@
 # Testausdokumentti  
 
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti tapahtunein järjestelmätason testein.  
+Ohjelmaa on testattu automatisoiduin yksikkö- ja integraatiotestein JUnitilla ja manuaalisesti järjestelmätason testeillä.  
 
 ## Yksikkö- ja integraatiotestaus  
 
 ### sovelluslogiikka  
 
-Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen domain luokkia testaavat integraatiotestit
+Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, siis pakkauksen domain luokkia testaavat integraatiotestit.
 Luokka logicsTest testaa sovelluslogiikkaa.
  
 
@@ -24,14 +24,13 @@ Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
 
 ### Asennus ja konfigurointi  
 
-Sovellus on haettu ja sitä on testattu käyttöohjeen kuvaamalla tavalla sekä OSX- että Linux-ympäristöön.
+Sovellus on haettu ja sekä testattu käyttöohjeen mukaisesti sekä OSX- että Linux-ympäristöön.
 
 Sovellusta on testattu sekä tilanteissa, joissa on käytetty reset nappia sekä muita merkki mahdollisuuksia.  
 
 ### Toiminnallisuudet  
 
-Kaikki määrittelydokumentin ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on
-syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.  
+Kaikki vaatimusmäärittelyn ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Ohjelmaa on testattu myös virheellisillä arvoilla esimerkiksi tyhjillä arvoilla.
 
 ## Sovellukseen jääneet laatuongelmat  
 
