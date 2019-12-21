@@ -2,7 +2,7 @@
 
 ## Rakenne  
 
-Ohjelman rakenne noudattelee kaksitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
+Ohjelman rakenne noudattaa kaksitasoista kerrosarkkitehtuuria, ja sillä on seuraavanlainen pakkausrakenne:
 
 ![Pakkauskaavio](https://github.com/joku-johku/ot-harjoitustyo3/blob/master/dokumentaatio/kuvat/pakkauskaavio.png)  
 
@@ -18,7 +18,7 @@ Käyttöliittymä sisältää kolme erillistä näkymää
 
 Jokainen näistä on toteutettu käyttämällä JFrame:a. Pelaajien nimen kysymiseen on käytetty apuna JOptionPane:a. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa tictactoe.tictactoe.ui.
 
-Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion Logics metodeja.
+Käyttöliittymä on yritetty luoda täysin eristyksiin sovelluslogiikasta, se vain kutsuu sopivilla parametreilla sovelluslogiikan toteuttavan olion Logics metodeja.
 
 Kun sovellukseen kirjautuu uusi pelaaja, pelaajan voitot kerätään wins.txt tiedostoon, jossa on pelien voittajien nimet sekä tasapelit.
 
@@ -50,9 +50,7 @@ Luokka noudattaa Data Access Object -suunnittelumallia ja ne on tarvittaessa mah
 
 #### Tiedostot  
 
-Sovellus tallettaa pelien voittajat ja tasapelit yhteen tiedostoon.
-
-Sovelluksen juureen sijoitettu konfiguraatiotiedosto config.properties määrittelee tiedoston nimen.
+Sovellus tallettaa pelien voittajat ja tasapelit yhteen tiedostoon, jonka nimi on on wins.txt.
 
 Sovellus tallettaa voittajat seuraavassa formaatissa  
 
@@ -68,7 +66,7 @@ Ohjelma tallentaa siis voittoihin sen nimen, jonka pelaaja on syöttänyt, kun n
  
 #### Päätoiminnallisuudet  
 
-Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
+Sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona kuvattuna.
 
 ##### Uuden pelin aloittaminen
 
