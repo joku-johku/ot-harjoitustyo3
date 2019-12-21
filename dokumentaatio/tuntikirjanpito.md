@@ -19,4 +19,5 @@ päivä | aika | mitä tein
 12.12 | 6h | Uuden ruudukon testaus. Asetus luokat ja pelaajien nimen kysyminen. Plus resetointi. Tiedostoon tallennus toimii.
 13.12 | 5h | Hieno säätöä, testausta ja dokumentointia.
 14.12 | 2h | Loppusilaukset.
-yht. | 70h |
+21.12 | 1h | Vähän korjauksia dokumentointiin.
+yht. | 71h |
