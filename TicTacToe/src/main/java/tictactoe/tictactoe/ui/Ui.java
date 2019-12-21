@@ -10,23 +10,16 @@ package tictactoe.tictactoe.ui;
  * @author Omistaja
  */
 
-import tictactoe.tictactoe.ui.SettingsListener;
-import tictactoe.tictactoe.ui.DrawCanvasListener;
-import tictactoe.tictactoe.ui.DrawCanvas;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.scene.control.TextField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-import tictactoe.tictactoe.domain.FileHandler;
-import tictactoe.tictactoe.ui.NewGameListener;
 import tictactoe.tictactoe.domain.Logics;
 
 /** Sovelluksen pääikkuna. Käyttöliittymä koostuu kahdesta osasta: piirtoalustasta, tekstikentästä ja napeista.

@@ -18,10 +18,8 @@ public class Logics {
     private FileHandler fileHandler; // tiedostonkäsittelijä
     private int crossDrawed; // Määrittää minkänäköinen kuvio ristin vuorolla piirretään.
     private int zeroDrawed; // Määrittää minkänäköinen kuvio nollan vuorolla piirretään.
-    private int pointscross;
-    private int pointszero;
-    private String playerOne;
-    private String playerTwo;
+    private String playerOne; // pelaajan yksi nimi
+    private String playerTwo; // pelaajan kaksi nimi
     
    
     /**
@@ -74,13 +72,6 @@ public class Logics {
         return playerTwo;
     }
     
-    public int getPointsCross() {
-        return this.pointscross;
-    }
-    
-    public int getPointsZero() {
-        return this.pointszero;
-    }
     
      /**
      * Palauttaa sen pelaajan nimen, jonka vuoro on.  
@@ -169,7 +160,6 @@ public class Logics {
         if (this.checkRows(who) || this.checkCols(who) || this.checkCrossing(who)) {
             if (who == 1) {
                 try {
-                    pointscross++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 } 
@@ -180,7 +170,6 @@ public class Logics {
                 }
             } else {
                 try {
-                    pointszero++;
                 } catch (Exception ex) {
                     Logger.getLogger(Logics.class.getName()).log(Level.SEVERE, null, ex);
                 } 
